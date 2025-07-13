@@ -29,8 +29,7 @@ a{text-decoration:none;cursor:default}
 </style>
 </head>
 <body>
-<canvas id="canvas"></canvas>
-<script src="canvasstar.js"></script><!--https://github.com/zoley/canvasStar-->
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script><!--https://github.com/crashmax-dev/fireworks-js/-->
 <h1 style="color:white">看我們 <span class="flash1" style="color:#ff4d6d">十在厲害</span></h1>
 <h1 style="color:white">讓我們 <span class="flash2" style="color:#ffd166">十力全開</span></h1>
 <a href="https://drive.google.com/drive/folders/11Wytdi-K7oJuZsSbPQDSIN8sllVAwyCI" target="_blank">
@@ -39,6 +38,7 @@ a{text-decoration:none;cursor:default}
 
 
 <script>
-new CanvasStar().init({star_r:20,move_distance:0.6})
+const fireworks = new Fireworks.default(document.body);
+fireworks.start();
 </script>
 </body>
