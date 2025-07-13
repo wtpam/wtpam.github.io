@@ -14,21 +14,21 @@ h1{font-size:400%;margin:0;line-height:150%;}
 h2{font-size:200%;color:black;background-color:yellow;display:inline}
 table{margin:0 auto;background-color:black;color:lime}/*table置中*/
 a{text-decoration:none;cursor:default}
+/*閃爍字*/
 .blink{animation:blink 1s ease infinite}
-@keyframes blink{
-0%{opacity:1}
-100%{opacity:0}
-}
+@keyframes blink{0%{opacity:1}100%{opacity:0}}
+
+.flash{animation:flash 1s infinite}
+@keyframes flash{0%,100%{opacity:1}50%{opacity:0.3}}
 /*閃爍字*/
 </style>
 </head>
 <body>
 <canvas id="canvas"></canvas>
 <script src="canvasstar.js"></script><!--https://github.com/zoley/canvasStar-->
-<h1 style="color:white;">看我們 <span style="color:#ff4d6d;">十在厲害</span></h1>
-<h1 style="color:white;">讓我們 <span style="color:#ffd166;">十力全開</span></h1>
-<!-- <h1 style="color:white;">看我們 <span style="color:#ff0000">十在厲害</span></h1>
-<h1 style="color:white;">讓我們 <span style="color:#ffff00">十力全開</span></h1> -->
+<h1 class="flash" style="color:white;">看我們 <span style="color:#ff4d6d;">十在厲害</span></h1>
+<h1 class="flash" style="color:white;">讓我們 <span style="color:#ffd166;">十力全開</span></h1>
+
 
 <script>
 new CanvasStar().init({star_r:20,move_distance:0.6})
