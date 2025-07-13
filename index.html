@@ -22,7 +22,7 @@ a{text-decoration:none;cursor:default}
 .flash2{animation:flash2 2s infinite}
 @keyframes flash2{0%,100%{opacity:0.5}50%{opacity:1}}
 /*閃爍字*/
-canvas{position:fixed !important;top:0;left:0;z-index:-1;}
+canvas{position:fixed !important;top:0;left:0;z-index:-1;pointer-events:none}
 </style>
 </head>
 <body>
@@ -47,7 +47,7 @@ const fireworks = new Fireworks.default(document.body,{
     autoresize: true,
     brightness: { min: 50, max: 80 },
     decay: { min: 0.015, max: 0.03 },
-    mouse: { click: true, move: false, max: 5 },
+    mouse: { click: true, move: false, max: 0 },
   });
   fireworks.start();
 </script>
