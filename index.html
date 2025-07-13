@@ -22,7 +22,7 @@ a{text-decoration:none;cursor:default}
 .flash2{animation:flash2 2s infinite}
 @keyframes flash2{0%,100%{opacity:0.5}50%{opacity:1}}
 /*閃爍字*/
-canvas{position:fixed !important;top:0;left:0;z-index:0}
+canvas{position:fixed !important;top:0;left:0;z-index:-1}
 </style>
 </head>
 <body>
@@ -33,21 +33,21 @@ canvas{position:fixed !important;top:0;left:0;z-index:0}
  <button style="font-size:400%; color:blue; width:9em">110班～聯絡簿</button>
 </a>
 <script>
-const fireworks = new Fireworks.default(document.body,{
-    hue: { min: 0, max: 360 },
-    delay: { min: 15, max: 30 },
-    speed: 2,
-    acceleration: 1.05,
-    friction: 0.95,
-    gravity: 1.5,
-    particles: 80,
-    traceLength: 3,
-    traceSpeed: 10,
-    explosion: 6,
-    autoresize: true,
-    brightness: { min: 50, max: 80 },
-    decay: { min: 0.015, max: 0.03 },
-  });
-  fireworks.start();
+const fireworks=new Fireworks.default(document.body,{
+ hue:{min:0,max:360},
+ delay:{min:15,max:30},
+ speed:2,
+ acceleration:1.05,
+ friction:0.95,
+ gravity:1.5,
+ particles:80,
+ traceLength:3,
+ traceSpeed:10,
+ explosion:6,
+ autoresize:true,
+ brightness:{min:50,max:80},
+ decay:{min:0.015,max:0.03}
+})
+fireworks.start()
 </script>
 </body>
