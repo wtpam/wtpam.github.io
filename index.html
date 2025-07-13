@@ -24,7 +24,11 @@ a{text-decoration:none;cursor:default}
 @keyframes flash2{0%,100%{opacity:0.5}50%{opacity:1}}
 
 
-canvas{z-index:-1}
+canvas{position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;}
 /*閃爍字*/
 </style>
 </head>
