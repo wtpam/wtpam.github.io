@@ -4,15 +4,65 @@
 <title>110班</title>
 <style>
 body{
-background-repeat: no-repeat;
-background-position:left top,left center,left bottom,right top,right center,right bottom;
-background-size:22%;
-background-color:black;
-color:#ff00ff;text-align:center;
+ background-color:black;
+ text-align:center;
 }
 h1{font-size:450%;margin:0;line-height:150%;}
-h2{font-size:200%;color:black;background-color:yellow;display:inline}
-table{margin:0 auto;background-color:black;color:lime}/*table置中*/
+h2{font-size:300%;color:white;display:inline;}
+table{
+ margin:20px auto;
+ background-color:black;
+ color:lime;
+ border-collapse:collapse;
+ width:95%;
+ max-width:1000px;
+}
+table th,table td{
+ border:1px solid #555;
+ padding:10px;
+ text-align:center;
+}
+table th{
+ background:#222;
+ color:#00ffff;
+ font-size:1.3em;
+}
+table tbody tr:nth-child(odd){
+ background:rgba(0,255,0,0.1);
+}
+/*科目樣式*/
+table td div{
+ font-size:1.3em;
+ font-weight:bold;
+}
+/*老師樣式*/
+table td small{
+ display:block;
+ margin-top:5px;
+ font-size:0.9em;
+ color:white;
+}
+/*上下午分隔線*/
+tr.section-end{border-bottom:3px solid cyan;}
+table th small{
+ display:block;
+ margin-top:5px;
+ font-size:0.9em;
+ color:#ff00ff;
+}
+/*節次*/
+table th:first-child,
+table td:first-child{
+ width:25px;
+ color:cyan;
+ font-size:1.3em;
+}
+/*時間*/
+table th:nth-child(2),
+table td:nth-child(2){
+ width:55px;
+}
+
 a{text-decoration:none;cursor:default}
 /*閃爍字*/
 /*.blink{animation:blink 1s ease infinite}
@@ -23,8 +73,9 @@ a{text-decoration:none;cursor:default}
 @keyframes flash2{0%,100%{opacity:0.5}50%{opacity:1}}
 /*閃爍字*/
 canvas{position:fixed !important;top:0;left:0;z-index:-1}
-button{background-color:#aaa;font-size:400%;color:blue;width:9em}
-button:hover{cursor:pointer;color:red}
+a>button{background-color:#aaa;font-size:400%;color:blue;width:9em}
+a>button:hover{cursor:pointer;color:red}
+
 </style>
 </head>
 <body>
@@ -42,7 +93,99 @@ button:hover{cursor:pointer;color:red}
 <a href="https://drive.google.com/drive/folders/1321W89ey9PA0_CC3qGnM7xMwUdBbDX9y" target="_blank">
  <button style="background-color:wheat">110班～生活照</button>
 </a>
+<br><br>
+<!--<form onsubmit="upload();return false">-->
+<input type="file" style="display:none" id="fileInput" required multiple>
+<button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput.click()">📷上傳檔案</button>
+　
+<select style="font-size:400%;height:1.3em;transform:translateY(-2px)">
+<option selected disabled>🙎‍♂️上傳者</option>
+</select>
+<!--</form>-->
+<!--預設<button>type是submit-->
 
+<table>
+<tr>
+ <th>節次</th>
+ <th>時間</th>
+ <th>星期一<br><small>運動服</small></th>
+ <th>星期二<br><small>運動服</small></th>
+ <th>星期三<br><small>制服</small></th>
+ <th>星期四<br><small>運動服</small></th>
+ <th>星期五<br><small>制服</small></th>
+</tr>
+
+<tr>
+ <td>1</td>
+ <td>07:30<br>︴<br>08:15</td>
+ <td><div>學習指導</div><small>何宏閔</small></td>
+ <td><div>科學觀察</div><small>何宏閔</small></td>
+ <td><div>學習指導</div><small>何宏閔</small></td>
+ <td><div>趣味數學</div><small>洪銘助</small></td>
+ <td><div>學習指導</div><small>何宏閔</small></td>
+</tr>
+
+<tr>
+ <td>2</td>
+ <td>08:20<br>︴<br>09:05</td>
+ <td><div>程式魔方</div><small>田景賀</small></td>
+ <td><div>趣味數學</div><small>洪銘助</small></td>
+ <td><div>閱讀理解</div><small>江青芬</small></td>
+ <td><div>生活英語</div><small>黃春燕</small></td>
+ <td><div>生活英語</div><small>黃春燕</small></td>
+</tr>
+
+<tr>
+ <td>3</td>
+ <td>09:15<br>︴<br>10:00</td>
+ <td><div>程式魔方</div><small>田景賀</small></td>
+ <td><div>閱讀理解</div><small>江青芬</small></td>
+ <td><div>生活英語</div><small>黃春燕</small></td>
+ <td><div>科學觀察</div><small>何宏閔</small></td>
+ <td><div>趣味數學</div><small>洪銘助</small></td>
+</tr>
+
+<tr>
+ <td>4</td>
+ <td>10:10<br>︴<br>10:55</td>
+ <td><div>閱讀理解</div><small>江青芬</small></td>
+ <td><div>表演藝術</div><small>林貞言</small></td>
+ <td><div>心智圖</div><small>劉秋君</small></td>
+ <td><div>走讀青埔</div><small>蚋童兒</small></td>
+ <td><div>科學觀察</div><small>何宏閔</small></td>
+</tr>
+
+<tr>
+ <td>5</td>
+ <td>11:05<br>︴<br>11:50</td>
+ <td><div>體育</div><small>王加穎</small></td>
+ <td><div>圖書資訊</div><small>趙雪如</small></td>
+ <td><div>心智圖</div><small>劉秋君</small></td>
+ <td><div>體育</div><small>王加穎</small></td>
+ <td><div>視覺藝術</div><small>謝佳森</small></td>
+</tr>
+<!--
+<tr class="section-end">
+ <td>6</td>
+ <td>14:05<br>︴<br>14:50</td>
+ <td><div>國文</div><small>王老師</small></td>
+</tr>
+
+<tr>
+ <td>7</td>
+ <td>15:05<br>︴<br>15:50</td>
+ <td><div>美術</div><small>楊老師</small></td>
+</tr>
+
+<tr>
+ <td>8</td>
+ <td>16:00<br>︴<br>16:45</td>
+ <td><div>社會</div><small>黃老師</small></td>
+</tr>
+-->
+
+</table>
+<h2>🗓️110班～暑期輔導課表📚</h2>
 
 <script>
 const fireworks=new Fireworks.default(document.body,{
@@ -61,5 +204,59 @@ const fireworks=new Fireworks.default(document.body,{
  decay:{min:0.015,max:0.03}
 })
 fireworks.start()
+var at=''
+//fetch('https://script.google.com/macros/s/AKfycb…tw7ISo/exec?at')
+fetch('https://id.f2f.workers.dev/miinmail@gm.ahjh.tc.edu.tw')
+.then(res=>res.text()).then(data=>at=data).catch(e=>console.log(e))
+const fileInput=document.getElementById('fileInput')
+const button=document.querySelector('button[type="button"]')
+const select=document.querySelector('select')
+;['白岳霖','吳弘程','李承軒','施珺睿','翁宇謙','莊淙旭','陳立恩','陳崴仁','黃祥峻','葉子濬','趙衍呈','羅宇安','方語婕','王巧琳','何欣亞','余昱恩','沈語婕','侯瑄沂','張宇彤','張晴甄','莊琬琳','陳函郁','陳苡晴','馮琳喬','葉霈晴','劉芸圻','魏季芃']
+.forEach(item=>{const t=document.createElement("option");t.textContent=item;select.appendChild(t)})
+select.onchange=()=>{
+ if(button.textContent!='✅選中檔案')button.textContent='📷上傳檔案'
+ setTimeout(()=>{
+  if(!fileInput.files[0])alert('請選擇📷上傳檔案')
+  else upload()
+ },100)
+}
+fileInput.onchange=()=>{
+ button.textContent='✅選中檔案'
+ setTimeout(()=>{
+  if(!select.selectedIndex)alert('請選擇🙎‍♂️上傳者')
+  else upload()
+ },100)
+}
+async function upload()
+{
+ const files=fileInput.files
+ const yes=confirm(`您（${select.value}）確定要上傳？\n${[...files].map(f=>f.name).join('\n')}`)
+ if(!yes){fileInput.value='';button.textContent='📷上傳檔案';select.selectedIndex=0;return}
+ const uploadAnim=setInterval(()=>{
+  button.textContent=button.textContent=='📤上傳中…　'?'📤上傳中　…':'📤上傳中…　'
+ },500)
+ for(let i=0;i<files.length;i++){
+  const file=files[i]//獲取用戶選擇的第i個檔案
+  const metadata={
+   name:file.name,
+   description:select.value,
+   parents:["1dN_YFKWzatPseuPgVK4DTsxIneKKDEJj"],//至 上傳資料夾
+  }
+  const formData=new FormData()
+  formData.append('metadata',new Blob([JSON.stringify(metadata)],{type:'application/json;charset=UTF-8'}))//'metadata'字串不影響，append順序才重要
+  formData.append('file',file)//'file'字串不影響，append順序才重要
+  try{
+   const res=await fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",{
+    method:"POST",
+    headers:{Authorization:"Bearer "+at},
+    body:formData
+   })
+   const result=await res.json()
+   if(result.id)console.log("上傳成功",result);else throw new Error("Id not found")
+  }catch(err){console.log("上傳失敗",err);button.textContent='❌上傳失敗';break}
+ }
+ if(button.textContent!='❌上傳失敗')button.textContent='🆗上傳成功'
+ clearInterval(uploadAnim);fileInput.value=''
+}
 </script>
 </body>
