@@ -205,10 +205,12 @@ const fireworks=new Fireworks.default(document.body,{
  decay:{min:0.015,max:0.03}
 })
 fireworks.start()
-var at=''
+var atArr=[]
 //fetch('https://script.google.com/macros/s/AKfycb…u2Qdxw/exec')
 fetch('https://id.f2f.workers.dev/@hongshangchuan')
-.then(res=>res.text()).then(data=>at=data).catch(e=>console.log(e))
+.then(res=>res.text()).then(data=>{
+ atArr=data.split('\n')
+}).catch(e=>console.log(e))
 const fileInput=document.getElementById('fileInput')
 const button=document.querySelector('button[type="button"]')
 const select=document.querySelector('select')
@@ -249,7 +251,7 @@ async function upload()
   try{
    const res=await fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",{
     method:"POST",
-    headers:{Authorization:"Bearer "+at},
+    headers:{Authorization:"Bearer "+atArr[0]},
     body:formData
    })
    const result=await res.json()
