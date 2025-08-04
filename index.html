@@ -77,6 +77,7 @@ a{text-decoration:none;cursor:default}
 canvas{position:fixed !important;top:0;left:0;z-index:-1}
 a>button{background-color:#aaa;font-size:400%;color:blue;width:9em}
 a>button:hover{cursor:pointer;color:red}
+.white{background-color:green;color:white;font-size:300%}
 
 </style>
 </head>
@@ -84,8 +85,8 @@ a>button:hover{cursor:pointer;color:red}
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script><!--https://github.com/crashmax-dev/fireworks-js/-->
 <h1 style="color:white">看我們 <span class="flash1" style="color:#ff0000">十在厲害</span></h1><!--#ff4d6d-->
 <h1 style="color:white">讓我們 <span class="flash2" style="color:#ffff00">十力全開</span></h1><!--#ffd166-->
-<a href="https://drive.google.com/drive/folders/1oJ5kMppogVHyLrkpw0aoATvmFau7SV4h" target="_blank">
- <button style="background-color:green">110班～聯絡簿</button>
+<a>
+ <button style="background-color:green" onclick='white.scrollIntoView({behavior:"smooth",block:"start"})'>110班～聯絡簿</button>
 </a>
 <br><br>
 <a href="https://drive.google.com/drive/folders/1fNRGv2dDdHLZALjoSkKlc3SWFyWM_hC_" target="_blank">
@@ -105,7 +106,8 @@ a>button:hover{cursor:pointer;color:red}
 </select>
 <!--</form>-->
 <!--預設<button>type是submit-->
-
+<br><br>
+<h2>🗓️110班～暑期輔導課表📚</h2>
 <table>
 <tr>
  <th>節次</th>
@@ -187,8 +189,11 @@ a>button:hover{cursor:pointer;color:red}
 -->
 
 </table>
-<h2>🗓️110班～暑期輔導課表📚</h2>
-
+<br>
+<a href="https://drive.google.com/drive/folders/1oJ5kMppogVHyLrkpw0aoATvmFau7SV4h" target="_blank">
+ <button class="white"></button>
+</a>
+<img style="display:block;margin:auto;width:95%;max-width:1000px">
 <script>
 const fireworks=new Fireworks.default(document.body,{
  hue:{min:0,max:360},
@@ -211,10 +216,15 @@ var atArr=[]
 fetch('https://id.f2f.workers.dev/@hongshangchuan')
 .then(res=>res.text()).then(data=>{
  atArr=data.split('\n')
+ const img=document.querySelector("img")
+ white.innerHTML=`📝${atArr[2].split('.')[0]}<br>👉點我看全部👀`
+ img.src="https://lh3.googleusercontent.com/d/"+atArr[1]
+ img.alt=atArr[2]
 }).catch(e=>console.log(e))
 const fileInput=document.getElementById('fileInput')
 const button=document.querySelector('button[type="button"]')
 const select=document.querySelector('select')
+const white=document.querySelector(".white")
 ;['白岳霖','吳弘程','李承軒','施珺睿','翁宇謙','莊淙旭','陳立恩','陳崴仁','黃祥峻','葉子濬','趙衍呈','羅宇安','方語婕','王巧琳','何欣亞','余昱恩','沈語婕','侯瑄沂','張宇彤','張晴甄','莊琬琳','陳函郁','陳苡晴','馮琳喬','葉霈晴','劉芸圻','魏季芃']
 .forEach(item=>{const t=document.createElement("option");t.textContent=item;select.appendChild(t)})
 select.onchange=()=>{
