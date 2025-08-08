@@ -51,6 +51,7 @@ table th small{
  margin-top:5px;
  font-size:0.9em;
  color:#ff00ff;
+ font-weight:400;
 }
 /*節次*/
 table th:first-child,
@@ -112,11 +113,11 @@ a>button:hover{cursor:pointer;color:red}
 <tr>
  <th>節次</th>
  <th>時間</th>
- <th>星期一<br><small>運動服</small></th>
- <th>星期二<br><small>運動服</small></th>
- <th>星期三<br><small>制服</small></th>
- <th>星期四<br><small>運動服</small></th>
- <th>星期五<br><small>制服</small></th>
+ <th>（一）<br><small>運動服</small></th>
+ <th>（二）<br><small>運動服</small></th>
+ <th>（三）<br><small>制服</small></th>
+ <th>（四）<br><small>運動服</small></th>
+ <th>（五）<br><small>制服</small></th>
 </tr>
 
 <tr>
@@ -195,6 +196,25 @@ a>button:hover{cursor:pointer;color:red}
 </a>
 <img style="display:block;margin:auto;width:95%;max-width:1000px">
 <script>
+const weekdays=
+(function(){
+ const today=new Date()
+ const day=today.getDay()//取得星期0-6
+ const monday= new Date(today)
+ const diffToMonday=day===0?-6:1-day
+ monday.setDate(today.getDate()+diffToMonday)
+ const days=[]
+ for(let i=0;i<5;i++){
+  const d=new Date(monday)
+  d.setDate(monday.getDate()+i)
+  days.push(d.toLocaleString('zh-TW',{month:'numeric',day:'numeric'}))
+ }
+ return days
+})()
+onload=()=>{
+ const th=document.querySelectorAll('th')
+ for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+}
 const fireworks=new Fireworks.default(document.body,{
  hue:{min:0,max:360},
  delay:{min:15,max:30},
@@ -254,7 +274,7 @@ async function upload()
   const metadata={
    name:file.name,
    description:select.value,
-   parents:["1xv8d14EAKDzrjt04iPLBAvtlD3cokwbZ"],//洪尚傳
+   parents:["1xv8d14EAKDzrjt04iPLBAvtlD3cokwbZ"]//洪尚傳
   }
   const formData=new FormData()
   formData.append('metadata',new Blob([JSON.stringify(metadata)],{type:'application/json;charset=UTF-8'}))//'metadata'字串不影響，append順序才重要
