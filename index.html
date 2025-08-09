@@ -83,6 +83,7 @@ a>button:hover{cursor:pointer;color:red}
 </style>
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script><!--https://github.com/crashmax-dev/fireworks-js/-->
 <h1 style="color:white">看我們 <span class="flash1" style="color:#ff0000">十在厲害</span></h1><!--#ff4d6d-->
 <h1 style="color:white">讓我們 <span class="flash2" style="color:#ffff00">十力全開</span></h1><!--#ffd166-->
@@ -100,7 +101,7 @@ a>button:hover{cursor:pointer;color:red}
 <br><br>
 <!--<form onsubmit="upload();return false">-->
 <input type="file" style="display:none" id="fileInput" required multiple>
-<button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput.click()">📷上傳檔案</button>
+<button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
 　
 <select style="font-size:400%;height:1.3em;transform:translateY(-2px)">
 <option selected disabled>🙎‍♂️上傳者</option>
@@ -264,7 +265,7 @@ fileInput.onchange=()=>{
 async function upload()
 {
  const files=fileInput.files
- const yes=confirm(`您（${select.value}）確定要上傳？\n${[...files].map(f=>f.name).join('\n')}`)
+ const yes=confirm(`您（${select.value}）確定要上傳以下${kind}？\n${[...files].map(f=>f.name).join('\n')}`)
  if(!yes){fileInput.value='';button.textContent='📷上傳檔案';select.selectedIndex=0;return}
  const uploadAnim=setInterval(()=>{
   button.textContent=button.textContent=='📤上傳中…　'?'📤上傳中　…':'📤上傳中…　'
@@ -273,7 +274,7 @@ async function upload()
   const file=files[i]//獲取用戶選擇的第i個檔案
   const metadata={
    name:file.name,
-   description:select.value,
+   description:select.value+kind,
    parents:["1xv8d14EAKDzrjt04iPLBAvtlD3cokwbZ"]//洪尚傳
   }
   const formData=new FormData()
@@ -291,6 +292,22 @@ async function upload()
  }
  if(button.textContent!='❌上傳失敗')button.textContent='🆗上傳成功'
  clearInterval(uploadAnim);fileInput.value=''
+}
+var kind=''
+function fileInput_click(){
+ Swal.fire({
+  title:'請選擇要上傳的項目？',
+  showCancelButton:true,
+  showDenyButton:true,
+  confirmButtonText:'證件照',
+  denyButtonText:'生活照',
+  cancelButtonText:'取消'
+ }).then(result=>{
+  if(result.isConfirmed)kind='-證件照'
+  else if(result.isDenied)kind='-生活照'
+  else return
+  fileInput.click()
+ })
 }
 </script>
 </body>
