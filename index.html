@@ -215,6 +215,14 @@ const weekdays=
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+
+ Swal.fire({
+  imageUrl:'https://lh3.googleusercontent.com/d/1fa6h0_e4ZCkJp9V5pBZm8LgztAEHs-3u',
+  imageAlt:'服儀檢查',
+  showConfirmButton:false,
+  width:'800px'
+ })
+
 }
 const fireworks=new Fireworks.default(document.body,{
  hue:{min:0,max:360},
