@@ -79,7 +79,7 @@ canvas{position:fixed !important;top:0;left:0;z-index:-1}
 a>button{background-color:#aaa;font-size:400%;color:blue;width:9em}
 a>button:hover{cursor:pointer;color:red}
 .white{background-color:green;color:white;font-size:300%}
-
+.swal-popup{font-size:1.5rem}
 </style>
 </head>
 <body>
@@ -301,7 +301,8 @@ function fileInput_click(){
   showDenyButton:true,
   confirmButtonText:'證件照',
   denyButtonText:'生活照',
-  cancelButtonText:'取消'
+  cancelButtonText:'取消',
+  customClass:{popup:'swal-popup'}
  }).then(result=>{
   if(result.isConfirmed)kind='-證件照'
   else if(result.isDenied)kind='-生活照'
