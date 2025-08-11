@@ -157,7 +157,8 @@ a>button:hover{cursor:pointer;color:red}
  <td>4</td>
  <td>10:10<br>︴<br>10:55</td>
  <td><div>閱讀理解</div><small>江青芬</small></td>
- <td><div class="red">體育</div><small>王加穎</small></td><!--<td><div>表演藝術</div><small>林貞言</small></td>-->
+<!--<td><div class="red">體育</div><small>王加穎</small></td>-->
+<td><div>表演藝術</div><small>林貞言</small></td>
  <td><div>心智圖</div><small>劉秋君</small></td>
  <td><div>走讀青埔</div><small>蚋童兒</small></td>
  <td><div>科學觀察</div><small>何宏閔</small></td>
@@ -169,7 +170,8 @@ a>button:hover{cursor:pointer;color:red}
  <td><div>體育</div><small>王加穎</small></td>
  <td><div>圖書資訊</div><small>趙雪如</small></td>
  <td><div>心智圖</div><small>劉秋君</small></td>
- <td><div class="red">表演藝術</div><small>林貞言</small></td><!--<td><div>體育</div><small>王加穎</small></td>-->
+<!--<td><div class="red">表演藝術</div><small>林貞言</small></td>-->
+<td><div>體育</div><small>王加穎</small></td>
  <td><div>視覺藝術</div><small>謝佳森</small></td>
 </tr>
 <!--
@@ -217,14 +219,14 @@ const weekdays=
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
-
+/*
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/11vaUq8zseJXSJvbC8zXTSC9VtCZdd-kY',
   imageAlt:'服儀檢查',
   showConfirmButton:false,
   width:'800px'
  })
-
+*/
 }
 const fireworks=new Fireworks.default(document.body,{
  hue:{min:0,max:360},
