@@ -219,7 +219,7 @@ const weekdays=
  const day=today.getDay()//取得星期0-6
  const monday= new Date(today)
  const diffToMonday=1-day//週日凌晨就會至下一週
- monday.setDate(today.getDate()+diffToMonday)
+ monday.setDate(32)//monday.setDate(today.getDate()+diffToMonday)
  const days=[]
  for(let i=0;i<5;i++){
   const d=new Date(monday)
