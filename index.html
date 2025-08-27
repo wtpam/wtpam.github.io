@@ -100,6 +100,20 @@ a>button:hover{cursor:pointer;color:red}
  <button style="background-color:wheat">110班～生活照</button>
 </a>
 <br><br>
+<a>
+ <button style="background-color:orange;width:5em" onclick="Swal.fire({imageUrl:'https://lh3.googleusercontent.com/d/17m75sC5Vx8o_BvX9-WfUj9VjzNQyQsGB',showConfirmButton:false,width:'800px'})">選社說明</button>
+</a>
+<a>
+ <button style="background-color:orange;width:5em" onclick='document.getElementById("club").scrollIntoView({behavior:"smooth",block:"start"})'>選社種類</button>
+</a>
+<br><br>
+<a href="https://drive.google.com/file/d/1pXEjayP2QkZP6VbSwvHqdkAC-IteJjBo/edit" target="_blank">
+ <button style="background-color:orange;width:5em">選社步驟</button>
+</a>
+<a>
+ <button style="background-color:orange;width:5em" onclick='document.querySelector("iframe").scrollIntoView({behavior:"smooth",block:"start"})'>選社影片</button>
+</a>
+<br><br>
 <!--<form onsubmit="upload();return false">-->
 <input type="file" style="display:none" id="fileInput" required multiple>
 <button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
@@ -207,6 +221,9 @@ a>button:hover{cursor:pointer;color:red}
  <button class="white"></button>
 </a>
 <img style="display:block;margin:auto;width:95%;max-width:800px">
+<img id="club" src="https://lh3.googleusercontent.com/d/1ikgkDTSRgsUE5xNtf_gbxBLkidB5bKRH=w1920" style="display:block;margin:auto;width:95%;max-width:800px">
+<iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/6b0GG1yuLRc" title="選社團步驟影片" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
+<br><br>
 <a href="https://drive.google.com/file/d/1AIsP6aptUJqV_3rw-xA0WUOFU74i8img/edit" target="_blank">
  <button style="background-color:green">🚌校車問與答❓</button>
 </a>
