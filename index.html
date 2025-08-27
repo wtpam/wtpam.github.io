@@ -79,6 +79,7 @@ canvas{position:fixed !important;top:0;left:0;z-index:-1}
 a>button{background-color:#aaa;font-size:400%;color:blue;width:9em}
 a>button:hover{cursor:pointer;color:red}
 .white{background-color:green;color:white;font-size:300%}
+.magenta{background-color:green;color:magenta;font-size:400%}
 .swal-popup{font-size:1.5rem}
 .red{color:red}
 </style>
@@ -88,6 +89,10 @@ a>button:hover{cursor:pointer;color:red}
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script><!--https://github.com/crashmax-dev/fireworks-js/-->
 <h1 style="color:white">看我們 <span class="flash1" style="color:#ff0000">十在厲害</span></h1><!--#ff4d6d-->
 <h1 style="color:white">讓我們 <span class="flash2" style="color:#ffff00">十力全開</span></h1><!--#ffd166-->
+<a>
+ <button class="magenta" onclick='document.getElementById("schedule").scrollIntoView({behavior:"smooth",block:"start"})'>第一學期行事曆</button>
+</a>
+<br><br>
 <a>
  <button style="background-color:green" onclick='white.scrollIntoView({behavior:"smooth",block:"start"})'>110班～聯絡簿</button>
 </a>
@@ -224,6 +229,8 @@ a>button:hover{cursor:pointer;color:red}
 <img id="club" src="https://lh3.googleusercontent.com/d/1ikgkDTSRgsUE5xNtf_gbxBLkidB5bKRH=w1920" style="display:block;margin:auto;width:95%;max-width:800px">
 <iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/6b0GG1yuLRc" title="選社團步驟影片" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
 <br><br>
+<iframe id="schedule" src="https://drive.google.com/file/d/1RP6D6MybWt3bNe80MKRpq29RTWtLlghH/preview" width="95%" style="border:none;max-width:800px;height:100vh"></iframe>
+<br><br>
 <a href="https://drive.google.com/file/d/1AIsP6aptUJqV_3rw-xA0WUOFU74i8img/edit" target="_blank">
  <button style="background-color:green">🚌校車問與答❓</button>
 </a>
@@ -248,14 +255,14 @@ const weekdays=
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
-
+/*
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/104lVroUUZKe5PrdrBNdYMEtVAgVqaTJB',
   imageAlt:'返校日',
   showConfirmButton:false,
   width:'800px'
  })
-
+*/
 }
 const fireworks=new Fireworks.default(document.body,{
  hue:{min:0,max:360},
