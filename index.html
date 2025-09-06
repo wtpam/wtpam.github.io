@@ -303,7 +303,7 @@ const button=document.querySelector('button[type="button"]')
 const select=document.querySelector('select')
 const white=document.querySelector(".white")
 ;['01白岳霖','02吳弘程','03李承軒','04施珺睿','05翁宇謙','06莊淙旭','07陳立恩','08陳崴仁','09黃祥峻','10葉子濬','11趙衍呈','12羅宇安','13王巧琳','14方語婕','15何欣亞','16余昱恩','17沈語婕','18侯瑄沂','19張宇彤','20張晴甄','21莊琬琳','22陳函郁','23陳苡晴','24葉霈晴','25劉芸圻','26魏季芃','27馮琳喬']
-.forEach(item=>{const t=document.createElement("option");t.textContent=item;select.appendChild(t)})
+.forEach(item=>{const t=document.createElement("option");t.textContent=item.replace(/(.)(.)$/,"$1Ｏ$2");;select.appendChild(t)})
 select.onchange=()=>{
  if(button.textContent!='✅選中檔案')button.textContent='📷上傳檔案'
  setTimeout(()=>{
