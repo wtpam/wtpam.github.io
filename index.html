@@ -97,12 +97,16 @@ a>button:hover{cursor:pointer;color:red}
  <button style="background-color:green" onclick='white.scrollIntoView({behavior:"smooth",block:"start"})'>110班～聯絡簿</button>
 </a>
 <br><br>
+<a href="https://drive.google.com/drive/folders/1321W89ey9PA0_CC3qGnM7xMwUdBbDX9y" target="_blank">
+ <button style="background-color:wheat">110班～生活照</button>
+</a>
+<br><br>
 <a href="https://drive.google.com/drive/folders/1fNRGv2dDdHLZALjoSkKlc3SWFyWM_hC_" target="_blank">
  <button>110班～公佈欄</button>
 </a>
 <br><br>
-<a href="https://drive.google.com/drive/folders/1321W89ey9PA0_CC3qGnM7xMwUdBbDX9y" target="_blank">
- <button style="background-color:wheat">110班～生活照</button>
+<a>
+ <button style="background-color:rgb(194,214,155)" onclick='document.getElementById("money").scrollIntoView({behavior:"smooth",block:"start"})'>💰班費明細💵📝</button>
 </a>
 <br><br>
 <a href="https://docs.google.com/spreadsheets/d/1Uo61SXFAQYDxV4kjRuf3CvzRlUgPGy_uLziKvx4t_KE/edit" target="_blank">
@@ -113,11 +117,12 @@ a>button:hover{cursor:pointer;color:red}
  <button style="background-color:lightSalmon">🌞自然重點📖📜</button>
 </a>
 <br><br>
+<!--
 <a>
  <button style="background-color:orange;width:5em" onclick="Swal.fire({imageUrl:'https://lh3.googleusercontent.com/d/17m75sC5Vx8o_BvX9-WfUj9VjzNQyQsGB',showConfirmButton:false,width:'800px'})">選社說明</button>
 </a>
 <a>
- <button style="background-color:orange;width:5em" onclick='document.getElementById("club").scrollIntoView({behavior:"smooth",block:"start"})'>選社種類</button>
+ <button style="background-color:orange;width:5em" onclick='document.getElementById("money").scrollIntoView({behavior:"smooth",block:"start"})'>選社種類</button>
 </a>
 <br><br>
 <a href="https://drive.google.com/file/d/1pXEjayP2QkZP6VbSwvHqdkAC-IteJjBo/edit" target="_blank">
@@ -126,7 +131,7 @@ a>button:hover{cursor:pointer;color:red}
 <a>
  <button style="background-color:orange;width:5em" onclick='document.querySelector("iframe").scrollIntoView({behavior:"smooth",block:"start"})'>選社影片</button>
 </a>
-<br><br>
+<br><br>-->
 <!--<form onsubmit="upload();return false">-->
 <input type="file" style="display:none" id="fileInput" required multiple>
 <button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
@@ -234,11 +239,14 @@ a>button:hover{cursor:pointer;color:red}
  <button class="white"></button>
 </a>
 <img style="display:block;margin:auto;width:95%;max-width:800px">
-<img id="club" src="https://lh3.googleusercontent.com/d/1ikgkDTSRgsUE5xNtf_gbxBLkidB5bKRH=w1920" style="display:block;margin:auto;width:95%;max-width:800px">
-<iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/6b0GG1yuLRc" title="選社團步驟影片" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
-<br><br>
-<iframe id="schedule" src="https://drive.google.com/file/d/1RP6D6MybWt3bNe80MKRpq29RTWtLlghH/preview" width="95%" style="border:none;max-width:800px;height:100vh"></iframe>
-<br><br>
+<br>
+<img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU" style="display:block;margin:auto;width:95%;max-width:800px">
+<!--https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920-->
+<!--<iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/6b0GG1yuLRc" title="選社團步驟影片" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>-->
+<br>
+<img id="schedule" src="https://lh3.googleusercontent.com/d/1NJL_HYQ1Sor82QV8dB1idYFZOUqQxhu4" style="display:block;margin:auto;width:95%;max-width:800px">
+<!--<iframe id="schedule" src="https://drive.google.com/file/d/1RP6D6MybWt3bNe80MKRpq29RTWtLlghH/preview" width="95%" style="border:none;max-width:800px;height:100vh"></iframe>-->
+<br>
 <a href="https://drive.google.com/file/d/1AIsP6aptUJqV_3rw-xA0WUOFU74i8img/edit" target="_blank">
  <button style="background-color:green">🚌校車問與答❓</button>
 </a>
