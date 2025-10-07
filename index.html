@@ -279,6 +279,7 @@ a>button:hover{cursor:pointer;color:red}
  <button style="background-color:green">🚌校車問與答❓</button>
 </a>
 <script>
+navigator.serviceWorker.register('sw.js')
 const lastUpdateTime=Date.now()
 document.onvisibilitychange=()=>{if(document.visibilityState==='visible'&&Date.now()-lastUpdateTime>3600000)location.reload()}
 const weekdays=
