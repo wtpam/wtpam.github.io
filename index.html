@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="icon" href="favicon.ico">
 <link rel="manifest" href="manifest.json">
-<title>110班</title>
+<title>幸福十班🌈</title>
 <style>
 body{
  background-color:black;
@@ -99,6 +99,10 @@ a>button:hover{cursor:pointer;color:red}
 </a>
 <br><br>
 -->
+<a>
+ <button id="installBtn" style="display:none;background-color:yellow;width:12em;font-size:300%;height:2em">❤️安裝幸福十班🌈APP</button>
+</a>
+<br><br>
 <a>
  <button class="white1" onclick='document.getElementById("schedule").scrollIntoView({behavior:"smooth",block:"start"})'>第一學期行事曆</button>
 </a>
@@ -279,7 +283,21 @@ a>button:hover{cursor:pointer;color:red}
  <button style="background-color:green">🚌校車問與答❓</button>
 </a>
 <script>
-//navigator.serviceWorker.register('sw.js')
+let deferredPrompt
+const installBtn=document.getElementById('installBtn')
+window.addEventListener('beforeinstallprompt',e=>{
+ e.preventDefault()
+ deferredPrompt=e
+ installBtn.style.display='inline-block'
+})
+installBtn.addEventListener('click',async()=>{
+ installBtn.style.display='none'
+ deferredPrompt.prompt()//顯示Chrome安裝對話框
+ const{outcome}=await deferredPrompt.userChoice
+ console.log(`使用者選擇：${outcome}`)
+ deferredPrompt=null
+})
+
 const lastUpdateTime=Date.now()
 document.onvisibilitychange=()=>{if(document.visibilityState==='visible'&&Date.now()-lastUpdateTime>3600000)location.reload()}
 const weekdays=

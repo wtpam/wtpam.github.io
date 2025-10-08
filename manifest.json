@@ -1,5 +1,5 @@
 {
- "name":"安和10班",
+ "name":"幸福十班🌈",
  "icons":[
   {
    "src":"192.png",
@@ -11,6 +11,5 @@
   }
  ],
  "start_url":"/index.html",
- "background_color":"yellow",
- "display":"fullscreen"
+ "display":"standalone"
 }
