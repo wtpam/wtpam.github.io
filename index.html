@@ -330,7 +330,7 @@ onload=()=>{
     您的瀏覽器不支援音訊播放
    </audio>
   `,
-  confirmButtonText:'關閉',
+  confirmButtonText:'段考注意事項',
   confirmButtonColor:'#ff8c00',
   width:'95%',
   didOpen:()=>{
@@ -340,15 +340,16 @@ onload=()=>{
    btn.style.marginTop='50px'
    Swal.getHtmlContainer().style.paddingBottom='150px'
   }
- })
+ }).then(result=>{if(result.isConfirmed)repeat()})
 
-/*
+const repeat=()=>{
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1NS77wTOiL2GLgHTo0lQDDaK_TB91MuPB?t=20251007',
   imageAlt:'公告',
   showConfirmButton:false,
   width:'800px'
- })*/
+ })
+}
 
 }
 const fireworks=new Fireworks.default(document.body,{
