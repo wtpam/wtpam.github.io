@@ -84,6 +84,7 @@ a>button:hover{cursor:pointer;color:red}
 .white1{background-color:green;color:white;font-size:400%}
 .swal-popup{font-size:1.5rem}
 .red{color:red}
+button{padding:0}/*for iPhone*/
 </style>
 </head>
 <body>
@@ -321,11 +322,33 @@ onload=()=>{
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
 
  Swal.fire({
+  title:'<span style="font-size:300%">💪 段考加油 📚🔥</span>',
+  html:`
+   <p style="color:red;font-size:250%">雙十國慶　幸福十班　十全十美👍</p>
+   <p style="color:blue;font-size:200%">準備好了嗎？來聽聽～英語聽力練習單元1～2😅</p><br>
+   <audio src="英語聽力練習單元1～2.mp3" controls style="transform:scale(2.5);width:40%;margin-top:10px">
+    您的瀏覽器不支援音訊播放
+   </audio>
+  `,
+  confirmButtonText:'關閉',
+  confirmButtonColor:'#ff8c00',
+  width:'95%',
+  didOpen:()=>{
+   const btn=Swal.getConfirmButton()
+   btn.style.fontSize='300%'
+   btn.style.padding='20px 30px'
+   btn.style.marginTop='50px'
+   Swal.getHtmlContainer().style.paddingBottom='150px'
+  }
+ })
+
+/*
+ Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1NS77wTOiL2GLgHTo0lQDDaK_TB91MuPB?t=20251007',
   imageAlt:'公告',
   showConfirmButton:false,
   width:'800px'
- })
+ })*/
 
 }
 const fireworks=new Fireworks.default(document.body,{
