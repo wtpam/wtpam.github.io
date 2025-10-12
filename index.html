@@ -326,9 +326,13 @@ onload=()=>{
   html:`
    <p style="color:red;font-size:250%">雙十國慶　幸福十班　十全十美👍</p>
    <p style="color:blue;font-size:200%">準備好了嗎？來聽聽～英語聽力練習單元1～2😅</p><br>
-   <audio src="英語聽力練習單元1～2.mp3" controls style="transform:scale(2.5);width:40%;margin-top:10px">
+   <!--<audio src="英語聽力練習單元1～2.mp3" controls style="transform:scale(2.5);width:40%;margin-top:10px">
     您的瀏覽器不支援音訊播放
-   </audio>
+   </audio>-->
+   <div style="display:inline-block;transform:scale(2);width:calc(100%/2)">
+    <span style="cursor:default" id="audioStatus">▶</span><span id="currentTime">0:00</span>
+    <input id="seekBar" type="range" value="0" min="0" max="100" step=".1" style="width:70%;"><span id="duration">00:00</span>
+   </div>
   `,
   confirmButtonText:'段考注意事項',
   confirmButtonColor:'#ff8c00',
@@ -339,7 +343,47 @@ onload=()=>{
    btn.style.padding='20px 30px'
    //btn.style.marginTop='50px'
    Swal.getHtmlContainer().style.paddingBottom='50px'
-  }
+
+   const audio=new Audio('英語聽力練習單元1～2.mp3')
+   audio.preload='metadata'
+   //audio.playsInline=true
+   const audioStatus=document.getElementById('audioStatus')
+   const currentTime=document.getElementById('currentTime')
+   const seekBar=document.getElementById('seekBar')
+   const duration=document.getElementById('duration')
+   let isDragging=false
+   function formatTime(sec) {
+    const m=Math.floor(sec/60),s=Math.floor(sec%60)
+    return`${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`
+   }
+   audio.addEventListener('loadedmetadata',()=>{
+    duration.textContent=formatTime(audio.duration)
+   })
+   audioStatus.addEventListener('click',async()=>{
+    if(audio.paused){
+     try{
+      await audio.play()
+      audioStatus.textContent='⏸'
+     }catch(e){console.warn('播放被阻擋',e)}
+    }else{audio.pause();audioStatus.textContent='▶'}
+   })
+   audio.addEventListener('timeupdate',()=>{
+    if(!isDragging){
+     currentTime.textContent=formatTime(audio.currentTime)
+     seekBar.value=audio.currentTime/audio.duration*100||0
+    }
+   })
+   seekBar.addEventListener('input',()=>{
+    isDragging=true
+    currentTime.textContent=formatTime(seekBar.value/100*audio.duration)
+   })
+   seekBar.addEventListener('change',()=>{
+    isDragging=false
+    audio.currentTime=seekBar.value/100*audio.duration
+   })
+   Swal._audio=audio
+  },
+  willClose:()=>{Swal._audio.src='';delete Swal._audio}
  }).then(result=>{if(result.isConfirmed)repeat()})
 
 const repeat=()=>{
