@@ -325,7 +325,7 @@ const weekdays=
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
-
+/*
  Swal.fire({
   title:'<span style="font-size:300%">💪 段考加油 📚🔥</span>',
   html:`
@@ -389,16 +389,16 @@ onload=()=>{
    Swal._audio=audio
   },
   willClose:()=>{Swal._audio.src='';delete Swal._audio}
- }).then(result=>{if(result.isConfirmed)repeat()})
+ }).then(result=>{if(result.isConfirmed)repeat()})*/
 
-const repeat=()=>{
+//const repeat=()=>{
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1NS77wTOiL2GLgHTo0lQDDaK_TB91MuPB?t=20251007',
   imageAlt:'公告',
   showConfirmButton:false,
   width:'800px'
  })
-}
+//}
 
 }
 const fireworks=new Fireworks.default(document.body,{
