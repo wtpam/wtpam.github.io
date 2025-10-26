@@ -392,12 +392,18 @@ onload=()=>{
  }).then(result=>{if(result.isConfirmed)repeat()})*/
 
 //const repeat=()=>{
- Swal.fire({
+ /*Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1cwbizeP4Z-E5ZIL1ViEuO0jJjqvWhwOv?t=20251007',
   imageAlt:'公告',
   showConfirmButton:false,
   width:'800px'
- })
+ })*/
+Swal.fire({
+ title: '🎵 提醒',
+ html:'<b>10/27（一）</b> 音樂課要帶直笛喔！',
+ icon:'info',
+ confirmButtonText:'知道了！'
+})
 //}
 
 }
