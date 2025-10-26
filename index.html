@@ -399,10 +399,15 @@ onload=()=>{
   width:'800px'
  })*/
 Swal.fire({
- title: '🎵 提醒',
+ title:'🎵 提醒',
  html:'<b>10/27（一）</b> 音樂課要帶直笛喔！',
  icon:'info',
- confirmButtonText:'知道了！'
+ confirmButtonText:'知道了！',
+ didOpen:()=>{
+  const popup=Swal.getPopup()
+  popup.style.transform='scale(1.5)'
+  popup.style.transformOrigin='center'
+ }
 })
 //}
 
