@@ -325,7 +325,27 @@ const weekdays=
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
-/*
+ const repeat=()=>{
+  Swal.fire({
+   imageUrl:'https://lh3.googleusercontent.com/d/1cwbizeP4Z-E5ZIL1ViEuO0jJjqvWhwOv?t=20251007',
+   imageAlt:'公告',
+   showConfirmButton:false,
+   width:'800px'
+  })
+  return
+  Swal.fire({
+   title:'🎵 提醒',
+   html:'<b>10/27（一）</b> 音樂課要帶直笛喔！',
+   icon:'info',
+   confirmButtonText:'知道了！',
+   didOpen:()=>{
+    const popup=Swal.getPopup()
+    popup.style.transform='scale(1.5)'
+    popup.style.transformOrigin='center'
+   }
+  })
+ }//repeat()
+ repeat();return
  Swal.fire({
   title:'<span style="font-size:300%">💪 段考加油 📚🔥</span>',
   html:`
@@ -389,29 +409,9 @@ onload=()=>{
    Swal._audio=audio
   },
   willClose:()=>{Swal._audio.src='';delete Swal._audio}
- }).then(result=>{if(result.isConfirmed)repeat()})*/
-
-//const repeat=()=>{
- Swal.fire({
-  imageUrl:'https://lh3.googleusercontent.com/d/1cwbizeP4Z-E5ZIL1ViEuO0jJjqvWhwOv?t=20251007',
-  imageAlt:'公告',
-  showConfirmButton:false,
-  width:'800px'
- })
-/*Swal.fire({
- title:'🎵 提醒',
- html:'<b>10/27（一）</b> 音樂課要帶直笛喔！',
- icon:'info',
- confirmButtonText:'知道了！',
- didOpen:()=>{
-  const popup=Swal.getPopup()
-  popup.style.transform='scale(1.5)'
-  popup.style.transformOrigin='center'
- }
-})*/
-//}
-
+ }).then(result=>{if(result.isConfirmed)repeat()})
 }
+
 const fireworks=new Fireworks.default(document.body,{
  hue:{min:0,max:360},
  delay:{min:15,max:30},
@@ -491,6 +491,16 @@ async function upload()
 }
 var kind=''
 function fileInput_click(){
+ Swal.fire({
+  title:'請一次選擇多張有自己的班遊照，愈多張班級輔導分數愈高哦！🌟🎉',
+  showCancelButton:true,
+  confirmButtonText:'選擇照片',
+  cancelButtonText:'取消',
+  customClass:{popup:'swal-popup'}
+ }).then(result=>{
+  if(result.isConfirmed)fileInput.click()
+ })
+ return
  Swal.fire({
   title:'請選擇要上傳的項目？',
   showCancelButton:true,
