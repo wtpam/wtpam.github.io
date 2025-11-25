@@ -345,7 +345,57 @@ onload=()=>{
    }
   })
  }
- repeat()
+ //repeat()
+ Swal.fire({
+  title:'📘 康軒雲帳號一覽',
+  width:'90%',
+  html:`
+    <table border="1" cellspacing="0" cellpadding="6"
+      style="border-collapse:collapse; text-align:center; width:100%; font-size:16px;">
+      <tr>
+        <th>座號</th>
+        <th>姓名</th>
+        <th>康軒雲帳號</th>
+      </tr>
+      <tr><td>01</td><td>白Ｏ霖</td><td>838294</td></tr>
+      <tr><td>02</td><td>吳Ｏ程</td><td>838407</td></tr>
+      <tr><td>03</td><td>李Ｏ軒</td><td>833073</td></tr>
+      <tr><td>04</td><td>施Ｏ睿</td><td>014433</td></tr>
+      <tr><td>05</td><td>翁Ｏ謙</td><td>838436</td></tr>
+      <tr><td>06</td><td>莊Ｏ旭</td><td>833168</td></tr>
+      <tr><td>07</td><td>陳Ｏ恩</td><td>833214</td></tr>
+      <tr><td>08</td><td>陳Ｏ仁</td><td>836299</td></tr>
+      <tr><td>09</td><td>黃Ｏ峻</td><td>829546</td></tr>
+      <tr><td>10</td><td>葉Ｏ濬</td><td>928292</td></tr>
+      <tr><td>11</td><td>趙Ｏ呈</td><td>833050</td></tr>
+      <tr><td>12</td><td>羅Ｏ安</td><td>833099</td></tr>
+      <tr><td>13</td><td>王Ｏ琳</td><td>838253</td></tr>
+      <tr><td>14</td><td>方Ｏ婕</td><td>843901</td></tr>
+      <tr><td>15</td><td>何Ｏ亞</td><td>838415</td></tr>
+      <tr><td>16</td><td>余Ｏ恩</td><td>833088</td></tr>
+      <tr><td>17</td><td>沈Ｏ婕</td><td>838319</td></tr>
+      <tr><td>18</td><td>侯Ｏ沂</td><td>837111</td></tr>
+      <tr><td>19</td><td>張Ｏ彤</td><td>923116</td></tr>
+      <tr><td>20</td><td>張Ｏ甄</td><td>197439</td></tr>
+      <tr><td>21</td><td>莊Ｏ琳</td><td>833112</td></tr>
+      <tr><td>22</td><td>陳Ｏ郁</td><td>838343</td></tr>
+      <tr><td>23</td><td>陳Ｏ晴</td><td>833132</td></tr>
+      <tr><td>24</td><td>葉Ｏ晴</td><td>843161</td></tr>
+      <tr><td>25</td><td>劉Ｏ圻</td><td>843865</td></tr>
+      <tr><td>26</td><td>魏Ｏ芃</td><td>833221</td></tr>
+      <tr><td>27</td><td>馮Ｏ喬</td><td>928287</td></tr>
+      <tr><td>28</td><td>李Ｏ榛</td><td>256768</td></tr>
+    </table>
+
+    <p style="margin-top:12px; text-align:left; line-height:1.6; font-size:16px;">
+      <strong>密碼：</strong>身分證字號後 9 個數字<br>
+      <strong>康軒雲：</strong>
+      <a href="https://ahjh-tc.kschool.com.tw" target="_blank" style="color:#0066cc;">
+        ahjh-tc.kschool.com.tw
+      </a>
+    </p>
+  `,confirmButtonText:'確認'
+ })
  return
  Swal.fire({
   title:'<span style="font-size:300%">💪 段考加油 📚🔥</span>',
