@@ -106,8 +106,8 @@ button{padding:0}/*for iPhone*/
  <button id="installBtn" style="display:none;background-color:yellow;width:12em;font-size:300%;height:2em">安裝❤️幸福十班🌈APP</button>
 </a>
 <br><br>
-<a href="113學年度第一學期一年級第二次定期評量英語聽力.mp3" target="_blank">
- <button class="black">🎵去年段二英聽</button>
+<a>
+ <button style="background-color:green" onclick='listen()'>🎵去年段二英聽</button>
 </a>
 <br><br>
 <a>
@@ -326,6 +326,62 @@ const weekdays=
  }
  return days
 })()
+
+const listen=()=>{
+ Swal.fire({
+ title:'113學年度第一學期一年級第二次定期評量英語聽力',
+ html:`
+  <div style="display:inline-block;transform:scale(2);width:calc(100%/2)">
+   <span style="cursor:default" id="audioStatus">▶</span><span id="currentTime">0:00</span>
+   <input id="seekBar" type="range" value="0" min="0" max="100" step=".1" style="width:65%;"><span id="duration">00:00</span>
+  </div>
+ `,
+ showConfirmButton:false,
+ width:'95%',
+ didOpen:()=>{
+  const audio=new Audio('113學年度第一學期一年級第二次定期評量英語聽力.mp3')
+  audio.preload='metadata'
+  //audio.playsInline=true
+  const audioStatus=document.getElementById('audioStatus')
+  const currentTime=document.getElementById('currentTime')
+  const seekBar=document.getElementById('seekBar')
+  const duration=document.getElementById('duration')
+  let isDragging=false
+  function formatTime(sec) {
+   const m=Math.floor(sec/60),s=Math.floor(sec%60)
+   return`${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`
+  }
+  audio.addEventListener('loadedmetadata',()=>{
+   duration.textContent=formatTime(audio.duration)
+  })
+  audioStatus.addEventListener('click',async()=>{
+   if(audio.paused){
+    try{
+     await audio.play()
+     audioStatus.textContent='⏸'
+    }catch(e){console.warn('播放被阻擋',e)}
+   }else{audio.pause();audioStatus.textContent='▶'}
+  })
+  audio.addEventListener('timeupdate',()=>{
+   if(!isDragging){
+    currentTime.textContent=formatTime(audio.currentTime)
+    seekBar.value=audio.currentTime/audio.duration*100||0
+   }
+  })
+  seekBar.addEventListener('input',()=>{
+   isDragging=true
+   currentTime.textContent=formatTime(seekBar.value/100*audio.duration)
+  })
+  seekBar.addEventListener('change',()=>{
+   isDragging=false
+   audio.currentTime=seekBar.value/100*audio.duration
+  })
+  Swal._audio=audio
+ },
+ willClose:()=>{Swal._audio.src='';delete Swal._audio}
+ })
+}
+
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
