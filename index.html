@@ -111,7 +111,11 @@ button{padding:0}/*for iPhone*/
 </a>
 <br><br>-->
 <a href="https://www.lihpaoresort.com/" target="_blank">
- <button style="background-color:yellow">🏰麗寶樂園🎡🎠</button>
+ <button class="black" style="background-color:#008de7">🏰麗寶樂園🎡🎠</button>
+</a>
+<br><br>
+<a>
+ <button style="background-color:#d9edf3" onclick='cloud()'>☁️康軒雲🌐🖥️</button>
 </a>
 <br><br>
 <a>
@@ -386,33 +390,10 @@ const listen=()=>{
  willClose:()=>{Swal._audio.src='';delete Swal._audio}
  })
 }
-
-onload=()=>{
- const th=document.querySelectorAll('th')
- for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
- const repeat=()=>{
-  Swal.fire({
-   imageUrl:'https://lh3.googleusercontent.com/d/1-flS3gu4VxD5HfAGUkJWQ9VboCM-UHAc',
-   imageAlt:'公告',
-   showConfirmButton:false,
-   width:'800px'
-  })
-  return
-  Swal.fire({
-   title:'🎵 提醒',
-   html:'<b>10/27（一）</b> 音樂課要帶直笛喔！',
-   icon:'info',
-   confirmButtonText:'知道了！',
-   didOpen:()=>{
-    const popup=Swal.getPopup()
-    popup.style.transform='scale(1.5)'
-    popup.style.transformOrigin='center'
-   }
-  })
- }
- //repeat()
+const cloud=()=>{
  Swal.fire({
   title:'📘康軒雲帳號一覽',
+  showConfirmButton:false,
   width:'400px',
   html:`
    <div style="text-align:center">
@@ -449,15 +430,38 @@ onload=()=>{
    </pre>
    <p style="text-align:center;font-size:18px;line-height:1.3;margin:0;padding:0">
     <strong>　密碼：</strong>身分證字號後9個數字<br>
-    <strong>康軒雲：</strong>
     <a href="https://ahjh-tc.kschool.com.tw" target="_blank" style="color:#0066cc;cursor:pointer">
-     ahjh-tc.kschool.com.tw
+    <strong>前往康軒雲：</strong>ahjh-tc.kschool.com.tw
     </a>
    </p>
    </div>
-  `,
-  confirmButtonText:'確定'//'段考注意事項'
-}).then(result=>{/*if(result.isConfirmed)repeat()*/})
+  `,//confirmButtonText:'段考注意事項'
+})//.then(result=>{if(result.isConfirmed)repeat()})
+}
+onload=()=>{
+ const th=document.querySelectorAll('th')
+ for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+ const repeat=()=>{
+  Swal.fire({
+   imageUrl:'https://lh3.googleusercontent.com/d/1-flS3gu4VxD5HfAGUkJWQ9VboCM-UHAc',
+   imageAlt:'公告',
+   showConfirmButton:false,
+   width:'800px'
+  })
+  return
+  Swal.fire({
+   title:'🎵 提醒',
+   html:'<b>10/27（一）</b> 音樂課要帶直笛喔！',
+   icon:'info',
+   confirmButtonText:'知道了！',
+   didOpen:()=>{
+    const popup=Swal.getPopup()
+    popup.style.transform='scale(1.5)'
+    popup.style.transformOrigin='center'
+   }
+  })
+ }
+ //repeat()
  return
  Swal.fire({
   title:'<span style="font-size:300%">💪 段考加油 📚🔥</span>',
