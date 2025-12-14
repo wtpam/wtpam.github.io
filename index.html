@@ -391,6 +391,7 @@ const b=h2.querySelector('b'),span=h2.querySelector('span');let sec=0
                  const index=stopsObj[arr[0]+arr[1]]
                  if(arr[2].includes(':'))arr[2]=arr[2].replace(':','：')
                  else{if(arr[2]==0)arr[2]='進站中';else if(arr[2]==60)arr[2]='將進站';else arr[2]=arr[2]/60+'分'}
+                 if(arr[2].includes('-'))arr[2]='　'
                  if(arr[0]==0)children0[index+1].textContent=arr[2];else children1[index+1].textContent=arr[2]
                 })
                })
