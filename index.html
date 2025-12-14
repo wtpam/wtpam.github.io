@@ -389,7 +389,7 @@ const b=h2.querySelector('b'),span=h2.querySelector('span');let sec=0
                 estime.forEach(item=>{
                  const arr=item.split('_,')
                  const index=stopsObj[arr[0]+arr[1]]
-                 if(arr[2].includes(':'))arr[2]=arr[2].replace(':','：')
+                 if(arr[2].includes(':'))arr[2]+='　'
                  else{if(arr[2]==0)arr[2]='進站中';else if(arr[2]==60)arr[2]='將進站';else arr[2]=arr[2]/60+'分'}
                  if(arr[2].includes('-'))arr[2]='　'
                  if(arr[0]==0)children0[index+1].textContent=arr[2];else children1[index+1].textContent=arr[2]
@@ -409,8 +409,8 @@ const b=h2.querySelector('b'),span=h2.querySelector('span');let sec=0
                 for(let i=1;i<children0.length;i++){children0[i].textContent='　';children1[i].textContent='　'}
                 plate.forEach(item=>{
                  const arr=item.split('_,')
-                 const index=stopsObj[arr[0]+arr[1]]
-                if(arr[0]==0)children0[index+1].textContent=arr[2].replace('-','－');else children1[index+1].textContent=arr[2].replace('-','－')
+                 const index=stopsObj[arr[0]+arr[1]];if(!index)return
+                 if(arr[0]==0)children0[index+1].textContent=arr[2]+'　';else children1[index+1].textContent=arr[2]+'　'
                 })
                })
 
