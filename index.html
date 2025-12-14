@@ -86,6 +86,7 @@ a>button:hover{cursor:pointer;color:red}
 .swal-popup{font-size:1.5rem}
 .red{color:red}
 button{padding:0}/*for iPhone*/
+b{color:red}
 </style>
 </head>
 <body>
@@ -114,6 +115,22 @@ button{padding:0}/*for iPhone*/
  <button class="black" style="background-color:#008de7">🏰麗寶樂園🎡🎠</button>
 </a>
 <br><br>
+<input type="file" style="display:none" id="fileInput" required multiple>
+<button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
+　
+<select style="font-size:400%;height:1.3em;transform:translateY(-2px)">
+<option selected disabled>🙎‍♂️上傳者</option>
+</select>
+<br>
+<h2>🚍155公車動態～<b>更新中…</b><span></span></h2>
+<div style="font-size:130%;color:white;display:flex;justify-content:center;white-space:nowrap">
+ <div style="background-color:#008de7"></div>
+ <div style="background-color:#008de7;color:yellow"></div>
+ <div style="background-color:#008de7;border-right:2px solid black"></div>
+ <div style="background-color:#008de7"></div>
+ <div style="background-color:#008de7;color:yellow"></div>
+ <div style="background-color:#008de7"></div>
+</div>
 <a>
  <button style="background-color:#d9edf3" onclick='cloud()'>☁️康軒雲🌐🖥️</button>
 </a>
@@ -180,15 +197,19 @@ button{padding:0}/*for iPhone*/
 </a>
 <br><br>-->
 <!--<form onsubmit="upload();return false">-->
+
+<!--置頂
 <input type="file" style="display:none" id="fileInput" required multiple>
 <button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
 　
 <select style="font-size:400%;height:1.3em;transform:translateY(-2px)">
 <option selected disabled>🙎‍♂️上傳者</option>
 </select>
+置頂-->
+
 <!--</form>-->
 <!--預設<button>type是submit-->
-<br><br>
+<!--置頂<br><br>置頂-->
 <h2>🗓️110班～第一學期課表📚</h2>
 <table>
 <tr>
@@ -317,6 +338,88 @@ installBtn.addEventListener('click',async()=>{
  deferredPrompt=null
 })
 
+
+let busToken;getToken()
+function getToken(){
+ const headers=encodeURIComponent(JSON.stringify({origin:"https://yunbus.tw",referer:"https://yunbus.tw/"}))
+ let url=encodeURIComponent("https://yunbus.tw/api/?route&TXG155")
+ fetch("https://md.spy-160126.workers.dev/?setHeaders="+headers+"&url="+url,{
+  method:"POST",
+  headers:{
+   "Content-Type":"application/x-www-form-urlencoded;charset=UTF-8",
+   "x-requested-with":"XMLHttpRequest",
+   verify:"dont be thief"
+  },body:"method=route&eng=false&RouteID=TXG155"
+ }).then(res=>res.json())
+   .then(data=>{
+busToken=data.Data.dtoken
+const stops=data.Data.stops.split('_|')
+const stopsObj={}
+let html0='<div style="text-align:center;color:black">去程站點</div>',html1='<div style="text-align:center;color:black">下班車時間</div>',html2='<div style="text-align:center;color:black">　車號與位置</div>'
+let html3='<div style="text-align:center;color:black">回程站點</div>',html4='<div style="text-align:center;color:black">下班車時間</div>',html5='<div style="text-align:center;color:black">　車號與位置</div>'
+stops.forEach((item,index)=>{
+ item=item.split('_,')
+ stopsObj[item[0]+item[2]]=index%38
+ if(item[3].includes('朝馬')||item[3]=='麗寶樂園')item[3]=`<b>${item[3]}</b>`
+ if(item[0]==0){html0+=`<div>${item[3]}</div>`;html1+='<div></div>';html2+='<div></div>'}
+ else{html3+=`<div>${item[3]}</div>`;html4+='<div></div>';html5+='<div></div>'}
+
+})
+const divs=document.querySelector('div').children
+divs[0].innerHTML=html0;divs[1].innerHTML=html1;divs[2].innerHTML=html2
+divs[3].innerHTML=html3;divs[4].innerHTML=html4;divs[5].innerHTML=html5
+
+const h2=document.querySelector('h2')
+const b=h2.querySelector('b'),span=h2.querySelector('span');let sec=0
+;(function updateCountdown(){sec--
+ if(sec>0){b.textContent=sec+'秒';span.textContent='後更新';setTimeout(updateCountdown,1000);return}
+ sec=10
+ b.textContent='更新中…';span.textContent=''
+
+ url=encodeURIComponent("https://busapi.yunbus.tw/busapi/?estime&TXG155")
+ const f1=fetch("https://md.spy-160126.workers.dev/?setHeaders="+headers+"&url="+url,{
+  method:"POST",
+  headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+  body:`t=${busToken}%3D%3D&m=1`
+ }).then(res=>res.text())
+   .then(data=>{
+                data=data.split('\n')[1]
+                const estime=data.split('_|')
+                const children0=divs[1].children,children1=divs[4].children
+                estime.forEach(item=>{
+                 const arr=item.split('_,')
+                 const index=stopsObj[arr[0]+arr[1]]
+                 if(arr[2].includes(':'))arr[2]=arr[2].replace(':','：')
+                 else{if(arr[2]==0)arr[2]='進站中';else if(arr[2]==60)arr[2]='將進站';else arr[2]=arr[2]/60+'分'}
+                 if(arr[0]==0)children0[index+1].textContent=arr[2];else children1[index+1].textContent=arr[2]
+                })
+               })
+
+ url=encodeURIComponent("https://busapi.yunbus.tw/busapi/?plate&TXG155")
+ const f2=fetch("https://md.spy-160126.workers.dev/?setHeaders="+headers+"&url="+url,{
+  method:"POST",
+  headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+  body:`t=${busToken}%3D%3D&m=2`
+ }).then(res=>res.text())
+   .then(data=>{
+                data=data.split('\n')[1]
+                const plate=data.split('_|')
+                const children0=divs[2].children,children1=divs[5].children
+                for(let i=1;i<children0.length;i++){children0[i].textContent='　';children1[i].textContent='　'}
+                plate.forEach(item=>{
+                 const arr=item.split('_,')
+                 const index=stopsObj[arr[0]+arr[1]]
+                if(arr[0]==0)children0[index+1].textContent=arr[2].replace('-','－');else children1[index+1].textContent=arr[2].replace('-','－')
+                })
+               })
+
+ Promise.all([f1,f2]).then(()=>{b.textContent='已更新！';setTimeout(updateCountdown,1000)}).catch(err=>console.error(err))
+})()
+
+}).catch(err=>console.error(err))
+}//getToken()
+
+
 const lastUpdateTime=Date.now()
 document.onvisibilitychange=()=>{if(document.visibilityState==='visible'&&Date.now()-lastUpdateTime>3600000)location.reload()}
 const weekdays=
@@ -443,7 +546,7 @@ onload=()=>{
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
  const repeat=()=>{
   Swal.fire({
-   imageUrl:'https://lh3.googleusercontent.com/d/1ZFSe5pS6GYM-kxjKBHDQJapatTZAFkI6',
+   imageUrl:'https://lh3.googleusercontent.com/d/1-flS3gu4VxD5HfAGUkJWQ9VboCM-UHAc',
    imageAlt:'公告',
    showConfirmButton:false,
    width:'800px'
@@ -461,7 +564,7 @@ onload=()=>{
    }
   })
  }
- repeat()
+ //repeat()
  return
  Swal.fire({
   title:'<span style="font-size:300%">💪 段考加油 📚🔥</span>',
