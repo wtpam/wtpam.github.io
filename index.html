@@ -356,8 +356,8 @@ function getToken(){
 busToken=data.Data.dtoken
 const stops=data.Data.stops.split('_|')
 const stopsObj={}
-let html0='<div style="text-align:center;color:black"><span style="background-color:yellow">↓去程</span>站點↓</div>',html1='<div style="text-align:center;color:black">下班車時間</div>',html2='<div style="text-align:center;color:black">　車號與位置</div>'
-let html3='<div style="text-align:center;color:black"><span style="background-color:yellow">↓回程</span>站點↓</div>',html4='<div style="text-align:center;color:black">下班車時間</div>',html5='<div style="text-align:center;color:black">　車號與位置</div>'
+let html0='<div style="text-align:center;color:black"><span style="background-color:yellow">↓去程</span>站點</div>',html1='<div style="text-align:center;color:black">下班車時間</div>',html2='<div style="text-align:center;color:black">　車號與位置</div>'
+let html3='<div style="text-align:center;color:black"><span style="background-color:yellow">↓回程</span>站點</div>',html4='<div style="text-align:center;color:black">下班車時間</div>',html5='<div style="text-align:center;color:black">　車號與位置</div>'
 stops.forEach((item,index)=>{
  item=item.split('_,')
  stopsObj[item[0]+item[2]]=index%38
