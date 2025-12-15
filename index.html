@@ -550,9 +550,10 @@ onload=()=>{
   Swal.fire({
    imageUrl:'https://lh3.googleusercontent.com/d/1cSA8T4Dz3u1IAFPu2m9Rgc_2JemGYOB-?t=1215',
    imageAlt:'公告',
-   showConfirmButton:false,
+   //showConfirmButton:false,
+   confirmButtonText:'🔎查看回程下車站【朝馬】🚏',
    width:'800px'
-  })
+  }).then(result=>{if(result.isConfirmed)open('https://maps.app.goo.gl/tvCLJrzfnRoougMQ8','_blank')})
   return
   Swal.fire({
    title:'🎵 提醒',
