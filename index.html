@@ -361,7 +361,7 @@ let html3='<div style="text-align:center;color:black"><span style="background-co
 stops.forEach((item,index)=>{
  item=item.split('_,')
  stopsObj[item[0]+item[2]]=index%38
- if(item[3].includes('朝馬2')||item[3].includes('秋紅谷')||item[3]=='麗寶樂園')item[3]=`<b>${item[3]}</b>`
+ if(item[3].includes('朝馬')||item[3]=='麗寶樂園'||item[3].includes('秋紅谷')&&item[0]==1)item[3]=`<b>${item[3]}</b>`
  if(item[0]==0){html0+=`<div>${item[3]}</div>`;html1+='<div></div>';html2+='<div></div>'}
  else{html3+=`<div>${item[3]}</div>`;html4+='<div></div>';html5+='<div></div>'}
 
