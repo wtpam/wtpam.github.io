@@ -411,7 +411,7 @@ const b=h2.querySelector('b'),span=h2.querySelector('span');let sec=0
                 plate.forEach(item=>{
                  const arr=item.split('_,')
                  const index=stopsObj[arr[0]+arr[1]];if(!index)return
-                 if(arr[0]==0)children0[index+1].textContent=arr[2]+'　';else children1[index+1].textContent=arr[2]+'　'
+                 if(arr[0]==0)children0[index+1].textContent='🚍'+arr[2]+'　';else children1[index+1].textContent='🚍'+arr[2]+'　'
                 })
                })
 
