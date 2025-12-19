@@ -111,10 +111,10 @@ b{color:red}
  <button style="background-color:lightSalmon" onclick='listen()'>🎵去年段二英聽</button>
 </a>
 <br><br>-->
-<a href="https://www.lihpaoresort.com/" target="_blank">
+<!--<a href="https://www.lihpaoresort.com/" target="_blank">
  <button class="black" style="background-color:#008de7">🏰麗寶樂園🎡🎠</button>
 </a>
-<br><br>
+<br><br>-->
 <input type="file" style="display:none" id="fileInput" required multiple>
 <button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
 　
@@ -122,7 +122,7 @@ b{color:red}
 <option selected disabled>🙎‍♂️上傳者</option>
 </select>
 <br>
-<h2>🚍155公車動態～<b>更新中…</b><span></span></h2>
+<!--<h2>🚍155公車動態～<b>更新中…</b><span></span></h2>
 <div style="font-size:130%;color:white;display:flex;justify-content:center;white-space:nowrap">
  <div style="background-color:#008de7"></div>
  <div style="background-color:#008de7;color:yellow"></div>
@@ -130,7 +130,7 @@ b{color:red}
  <div style="background-color:#008de7"></div>
  <div style="background-color:#008de7;color:yellow"></div>
  <div style="background-color:#008de7"></div>
-</div>
+</div>-->
 <br>
 <a>
  <button style="background-color:#d9edf3" onclick='cloud()'>☁️康軒雲🌐🖥️</button>
@@ -340,7 +340,7 @@ installBtn.addEventListener('click',async()=>{
 })
 
 
-let busToken;getToken()
+//let busToken;getToken()
 function getToken(){
  const headers=encodeURIComponent(JSON.stringify({origin:"https://yunbus.tw",referer:"https://yunbus.tw/"}))
  let url=encodeURIComponent("https://yunbus.tw/api/?route&TXG155")
@@ -569,7 +569,7 @@ onload=()=>{
    }
   })
  }
- repeat()
+ //repeat()
  return
  Swal.fire({
   title:'<span style="font-size:300%">💪 段考加油 📚🔥</span>',
