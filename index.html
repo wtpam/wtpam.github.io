@@ -550,6 +550,13 @@ const cloud=()=>{
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+
+ Swal.fire({
+   imageUrl:'https://lh3.googleusercontent.com/d/1udqJyDetko0xxfD11L_MLHJQvvXJKhsx',
+   imageAlt:'第三次定期評量',
+   showConfirmButton:false,
+   width:'800px'
+  })
  const repeat=()=>{
   Swal.fire({
    imageUrl:'https://lh3.googleusercontent.com/d/1lsQuP1gx1iU4DjwGgtS_qylQ_cqEm0ac',
