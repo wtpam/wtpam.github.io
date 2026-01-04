@@ -11,6 +11,18 @@ body{
  background-color:black;
  text-align:center;
 }
+
+#back-left,#back-right{
+ position:fixed;
+ bottom:0;
+ padding:20px 5px;
+ font-size:36px;
+ display:none;
+ cursor:pointer;
+ background-color:#FFFFFF80
+}
+#back-left{left:0}#back-right{right:0}
+
 h1{font-size:450%;margin:0;line-height:150%;}
 h2{font-size:300%;color:white;display:inline;}
 table{
@@ -92,6 +104,7 @@ b{color:red}
 <body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script><!--https://github.com/crashmax-dev/fireworks-js/-->
+<button id="back-left" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button><button id="back-right" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <h1 style="color:white">看我們 <span class="flash1" style="color:#ffff00">十在厲害</span></h1><!--#ff4d6d-->
 <h1 style="color:white">讓我們 <span class="flash2" style="color:#ff0000">十力全開</span></h1><!--#ffd166-->
 <!--
@@ -311,6 +324,7 @@ b{color:red}
 <a href="https://drive.google.com/drive/folders/1oJ5kMppogVHyLrkpw0aoATvmFau7SV4h" target="_blank">
  <button class="white"></button>
 </a>
+<section>
 <img style="display:block;margin:auto;width:95%;max-width:800px">
 <br>
 <img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU?t=20251226" style="display:block;margin:auto;width:95%;max-width:800px">
@@ -327,7 +341,15 @@ b{color:red}
 <a href="https://drive.google.com/file/d/1AIsP6aptUJqV_3rw-xA0WUOFU74i8img/edit" target="_blank">
  <button style="background-color:green">🚌校車問與答❓</button>
 </a>
+</section>
 <script>
+const backLeft=document.getElementById('back-left'),backRight=document.getElementById('back-right')
+const section=document.querySelector('section')
+new IntersectionObserver(entries=>{
+ const show=entries[0].isIntersecting?'block':'none'
+ backLeft.style.display=backRight.style.display=show
+}).observe(section)
+
 let deferredPrompt
 const installBtn=document.getElementById('installBtn')
 window.addEventListener('beforeinstallprompt',e=>{
@@ -342,7 +364,6 @@ installBtn.addEventListener('click',async()=>{
  console.log(`使用者選擇：${outcome}`)
  deferredPrompt=null
 })
-
 
 //let busToken;getToken()
 function getToken(){
