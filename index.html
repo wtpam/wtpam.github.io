@@ -15,10 +15,11 @@ body{
 #back-left,#back-right{
  position:fixed;
  bottom:0;
- padding:20px 5px;
+ padding:30px 10px;
  font-size:36px;
  display:none;
  cursor:pointer;
+ color:red;
  background-color:#FFFFFF80
 }
 #back-left{left:0}#back-right{right:0}
@@ -120,10 +121,29 @@ b{color:red}
  <button id="installBtn" style="display:none;background-color:yellow;width:12em;font-size:300%;height:2em">安裝❤️幸福十班🌈APP</button>
 </a>
 <br><br>
-<!--<a>
- <button style="background-color:lightSalmon" onclick='listen()'>🎵去年段二英聽</button>
+<h1 class="flash2" style="color:yellow">📝去年段三試題💯</h1>
+<a href="https://drive.google.com/file/d/1WUML88ikKB2iTDuHxBhL5qjqrR73GMGX/edit" target="_blank">
+ <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em">國<br>文</button>
 </a>
-<br><br>-->
+<a href="https://drive.google.com/file/d/1rMC39jU1GqHCKFSXSx25rpk2TyHcAshM/edit" target="_blank">
+ <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em">英<br>語</button>
+</a>
+<a>
+ <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em" onclick='listen()'>英<br>聽</button>
+</a>
+<a href="https://drive.google.com/file/d/1VoPw3GyhjCBFYv6orB4Hodu3FaMqV_Xb/edit" target="_blank">
+ <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em">數<br>學</button>
+</a>
+<a href="https://drive.google.com/file/d/1susNYjxJWI9qzl6sLM8IWmBM1bTXUPJE/edit" target="_blank">
+ <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em">自<br>然</button>
+</a>
+<a href="https://drive.google.com/file/d/1hrdJ_7CEDdzbw88B2ROg0XazQ10jQqOs/edit" target="_blank">
+ <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em">社<br>會</button>
+</a>
+<!--<a>
+ <button style="background-color:lightSalmon" onclick='listen()'>🎵去年段三英聽</button>
+</a>-->
+<br><br>
 <!--<a href="https://www.lihpaoresort.com/" target="_blank">
  <button class="black" style="background-color:#008de7">🏰麗寶樂園🎡🎠</button>
 </a>
@@ -467,7 +487,7 @@ const weekdays=
 
 const listen=()=>{
  Swal.fire({
- title:'113學年度第一學期一年級第二次定期評量英語聽力',
+ title:'113學年度第一學期一年級第三次定期評量英語聽力',
  html:`
   <div style="display:inline-block;transform:scale(2);width:calc(100%/2)">
    <span style="cursor:default" id="audioStatus">▶</span><span id="currentTime">0:00</span>
@@ -478,7 +498,7 @@ const listen=()=>{
  showConfirmButton:false,
  width:'95%',
  didOpen:()=>{
-  const audio=new Audio('113學年度第一學期一年級第二次定期評量英語聽力.mp3')
+  const audio=new Audio('113學年度第一學期一年級英語第三次學習評量-聽力.mp3')
   audio.preload='metadata'
   //audio.playsInline=true
   const audioStatus=document.getElementById('audioStatus')
@@ -775,3 +795,4 @@ function fileInput_click(){
 }
 </script>
 </body>
+
