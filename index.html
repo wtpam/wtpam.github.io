@@ -121,11 +121,24 @@ b{color:red}
  <button id="installBtn" style="display:none;background-color:yellow;width:12em;font-size:300%;height:2em">安裝❤️幸福十班🌈APP</button>
 </a>
 <br><br>
+<h1 style="color:white">📘補行評量題庫✏️</h1>
+<a href="https://drive.google.com/file/d/1gmrVcFQ6gMRKkDkxiRXqDk6rT1r_ngq7/edit" target="_blank">
+ <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">語文</button>
+</a>
+<a href="https://drive.google.com/file/d/1EzP-gOjD0MIUXmSiOjfUXjjsEpJVeFak/edit" target="_blank">
+ <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">數學</button>
+</a>
+<a href="https://drive.google.com/file/d/1nHgUwUD9owS_qz8fkrbuicLI-L7POc9L/edit" target="_blank">
+ <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">自然</button>
+</a>
+<a href="https://drive.google.com/file/d/1q3Vouhn_24-6Nm6lHQu5Zz8hMTMq3Q0T/edit" target="_blank">
+ <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">社會</button>
+</a>
+<br><br>
 <a>
  <button class="flash2" style="color:yellow;background-color:#008de7" onclick='document.getElementById("homework").scrollIntoView({behavior:"smooth",block:"start"})'>📢寒假作業說明📝</button>
 </a>
 <br><br>
-<!--<a href="https://classroom.google.com/c/NzgyNTc0NDkzMTY4?cjc=lri636vf" target="_blank">-->
 <a href="https://drive.google.com/drive/folders/1uzWtRtCPm6ppBir0WPbGIcehidmiY3EHtbLeOZCPiZDo8KGJLGN0AJf5lzyUOcLpjJSo2Glr" target="_blank">
  <button class="flash2" style="color:yellow;background-color:#008de7">📌寒假作業上傳📤</button>
 </a>
@@ -357,7 +370,7 @@ b{color:red}
 <section>
 <img style="display:block;margin:auto;width:95%;max-width:800px">
 <br>
-<img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920?t=20260123" style="display:block;margin:auto;width:95%;max-width:800px">
+<img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920?t=20260124" style="display:block;margin:auto;width:95%;max-width:800px">
 <!--https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920-->
 <iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/BfQAxKIwhz8" title="英文歌唱比賽" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
 <br>
@@ -604,6 +617,12 @@ const cloud=()=>{
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+ Swal.fire({
+   imageUrl:'https://lh3.googleusercontent.com/d/1ITrtomG42OpSObxMm6fBax_JfQjqKTn4?t=20260123',
+   imageAlt:'補行評量',
+   confirmButtonText:'<span style="font-size:2rem">👀看題庫✏️📘</span>',
+   width:'800px'
+ })
  return
  Swal.fire({
    imageUrl:'https://lh3.googleusercontent.com/d/1udqJyDetko0xxfD11L_MLHJQvvXJKhsx?t=20260120',
