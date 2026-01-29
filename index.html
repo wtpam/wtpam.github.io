@@ -120,6 +120,7 @@ b{color:red}
 <a>
  <button id="installBtn" style="display:none;background-color:yellow;width:12em;font-size:300%;height:2em">安裝❤️幸福十班🌈APP</button>
 </a>
+<!--
 <h1 style="color:white">📘補行評量題庫✏️</h1>
 <a href="https://drive.google.com/file/d/1gmrVcFQ6gMRKkDkxiRXqDk6rT1r_ngq7/edit" target="_blank">
  <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">語文</button>
@@ -133,6 +134,20 @@ b{color:red}
 <a href="https://drive.google.com/file/d/1q3Vouhn_24-6Nm6lHQu5Zz8hMTMq3Q0T/edit" target="_blank">
  <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">社會</button>
 </a>
+-->
+<br><br>
+<a>
+ <button style="background-color:lime" onclick='document.getElementById("club").scrollIntoView({behavior:"smooth",block:"start"})'>社團名稱＆簡介🔥</button>
+</a>
+<br><br>
+
+<a>
+ <button style="background-color:lime;width:6em;font-size:300%;height:3em" onclick='document.querySelector("iframe").scrollIntoView({behavior:"smooth",block:"start"})'>🎯選社步驟<br>🎬影片</button>
+</a>
+<a href="https://drive.google.com/file/d/1FN3Sub2HCy47pSKHqekDl4HBDp-suyxA/edit" target="_blank">
+ <button style="background-color:lime;width:6em;font-size:300%;height:3em">🎯選社步驟<br>🖼️簡報</button>
+</a>
+
 <br><br>
 <a>
  <button class="flash2" style="color:yellow;background-color:#008de7" onclick='document.getElementById("homework").scrollIntoView({behavior:"smooth",block:"start"})'>📢寒假作業說明📝</button>
@@ -164,17 +179,10 @@ b{color:red}
 <!--<a>
  <button style="background-color:lightSalmon" onclick='listen()'>🎵去年段三英聽</button>
 </a>-->
-<br><br>
 <!--<a href="https://www.lihpaoresort.com/" target="_blank">
  <button class="black" style="background-color:#008de7">🏰麗寶樂園🎡🎠</button>
 </a>
 <br><br>-->
-<input type="file" style="display:none" id="fileInput" required multiple>
-<button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
-　
-<select style="font-size:400%;height:1.3em;transform:translateY(-2px)">
-<option selected disabled>🙎‍♂️上傳者</option>
-</select>
 <br>
 <!--<h2>🚍155公車動態～<b>更新中…</b><span></span></h2>
 <div style="font-size:130%;color:white;display:flex;justify-content:center;white-space:nowrap">
@@ -186,10 +194,11 @@ b{color:red}
  <div style="background-color:#008de7"></div>
 </div>-->
 <br>
+<!--
 <a>
  <button style="background-color:yellow" onclick='document.querySelector("iframe").scrollIntoView({behavior:"smooth",block:"start"})'>🎶英文歌唱比賽🏆</button>
 </a>
-<br><br>
+<br><br>-->
 <a>
  <button style="background-color:#d9edf3" onclick='cloud()'>☁️康軒雲🌐🖥️</button>
 </a>
@@ -241,6 +250,15 @@ b{color:red}
  <button style="background-color:yellow;width:7.5em;font-size:250%;height:2.3em">🏫線上教室2🪑</button>
 </a>
 <br><br>
+<input type="file" style="display:none" id="fileInput" required multiple>
+<button type="button" style="font-size:370%;width:6.3em;height:1.45em;padding:0;white-space:nowrap" onclick="if(this.textContent.includes('上傳中'))return;if(this.textContent!='✅選中檔案')this.textContent='📷上傳檔案';fileInput_click()">📷上傳檔案</button>
+　
+<select style="font-size:400%;height:1.3em;transform:translateY(-2px)">
+<option selected disabled>🙎‍♂️上傳者</option>
+</select>
+<br><br>
+<img id="club" src="https://lh3.googleusercontent.com/d/1ANXubrrErWIXeB4mo04p9NuPN-C-9tOd" style="display:block;margin:auto;width:95%;max-width:800px">
+<img src="https://lh3.googleusercontent.com/d/1zWG3zK4C5VcGGqW_Hs3kmxoFaPnteJ_u" style="display:block;margin:auto;width:95%;max-width:800px">
 <!--
 <a>
  <button style="background-color:orange;width:5em" onclick="Swal.fire({imageUrl:'https://lh3.googleusercontent.com/d/17m75sC5Vx8o_BvX9-WfUj9VjzNQyQsGB',showConfirmButton:false,width:'800px'})">選社說明</button>
@@ -367,11 +385,11 @@ b{color:red}
  <button class="white"></button>
 </a>
 <section>
-<img style="display:block;margin:auto;width:95%;max-width:800px">
+<img id="memo" style="display:block;margin:auto;width:95%;max-width:800px">
 <br>
 <img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920?t=20260124" style="display:block;margin:auto;width:95%;max-width:800px">
 <!--https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920-->
-<iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/BfQAxKIwhz8" title="英文歌唱比賽" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
+<iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/6b0GG1yuLRc" title="選社團步驟" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
 <br>
 <img id="schedule" src="https://lh3.googleusercontent.com/d/1NJL_HYQ1Sor82QV8dB1idYFZOUqQxhu4" style="display:block;margin:auto;width:95%;max-width:800px">
 <!--<iframe id="schedule" src="https://drive.google.com/file/d/1RP6D6MybWt3bNe80MKRpq29RTWtLlghH/preview" width="95%" style="border:none;max-width:800px;height:100vh"></iframe>-->
@@ -618,9 +636,10 @@ onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
  Swal.fire({
-   imageUrl:'https://lh3.googleusercontent.com/d/1ITrtomG42OpSObxMm6fBax_JfQjqKTn4?t=20260123',
-   imageAlt:'補行評量',
-   confirmButtonText:'<span style="font-size:2rem">👀看題庫✏️📘</span>',
+   imageUrl:'https://lh3.googleusercontent.com/d/1jERVpYcmNwr5IZ5qEq20j1zqbds5aF3Z?t=20260129',
+   imageAlt:'社團說明',
+   showConfirmButton:false,
+   //confirmButtonText:'<span style="font-size:2rem">👀看題庫✏️📘</span>',
    width:'800px'
  })
  return
@@ -742,7 +761,7 @@ var atArr=[]
 fetch('https://id.f2f.workers.dev/@hongshangchuan')
 .then(res=>res.text()).then(data=>{
  atArr=data.split('\n')
- const img=document.querySelector("img")
+ const img=document.getElementById('memo')
  white.innerHTML=`📝${atArr[2].split('.')[0]}<br>👉點我看全部👀`
  img.src="https://lh3.googleusercontent.com/d/"+atArr[1]
  img.alt=atArr[2]
@@ -827,4 +846,3 @@ function fileInput_click(){
 }
 </script>
 </body>
-
