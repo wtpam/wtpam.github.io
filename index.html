@@ -135,7 +135,7 @@ b{color:red}
  <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">社會</button>
 </a>
 -->
-<br><br>
+<!--<br><br>
 <a>
  <button style="background-color:lime" onclick='document.getElementById("club").scrollIntoView({behavior:"smooth",block:"start"})'>社團名稱＆簡介🔥</button>
 </a>
@@ -147,7 +147,7 @@ b{color:red}
 <a href="https://drive.google.com/file/d/1FN3Sub2HCy47pSKHqekDl4HBDp-suyxA/edit" target="_blank">
  <button style="background-color:lime;width:6em;font-size:300%;height:3em">🎯選社步驟<br>🖼️簡報</button>
 </a>
-
+-->
 <br><br>
 <a>
  <button class="flash2" style="color:yellow;background-color:#008de7" onclick='document.getElementById("homework").scrollIntoView({behavior:"smooth",block:"start"})'>📢寒假作業說明📝</button>
@@ -389,7 +389,7 @@ b{color:red}
 <br>
 <img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920?t=20260124" style="display:block;margin:auto;width:95%;max-width:800px">
 <!--https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920-->
-<iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/6b0GG1yuLRc" title="選社團步驟" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
+<iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/BfQAxKIwhz8" title="英文歌唱比賽" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
 <br>
 <img id="schedule" src="https://lh3.googleusercontent.com/d/1NJL_HYQ1Sor82QV8dB1idYFZOUqQxhu4" style="display:block;margin:auto;width:95%;max-width:800px">
 <!--<iframe id="schedule" src="https://drive.google.com/file/d/1RP6D6MybWt3bNe80MKRpq29RTWtLlghH/preview" width="95%" style="border:none;max-width:800px;height:100vh"></iframe>-->
@@ -635,6 +635,7 @@ const cloud=()=>{
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+ return
  Swal.fire({
    imageUrl:'https://lh3.googleusercontent.com/d/1jERVpYcmNwr5IZ5qEq20j1zqbds5aF3Z?t=20260129',
    imageAlt:'社團說明',
