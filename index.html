@@ -642,6 +642,30 @@ onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
  //repeat()
+ Swal.fire({
+  title:'🎨 視覺藝術｜小組分組報告 ⭐',
+  html:`
+  <div style="text-align:left;line-height:1.6;">
+    <b>📌 題目：</b><br>
+    公共藝術及街頭藝術報告（每組至少介紹10件作品）<br><br>
+
+    <b>🛠 製作方式：</b><br>
+    使用 Canva 或 Google 簡報製作<br>
+    內容需包含「圖片」＋「介紹文字」<br><br>
+
+    <b>👥 分工：</b><br>
+    每位組員皆需參與，並盡量上台報告<br><br>
+
+    <b>⚠️ 特殊情況：</b><br>
+    若無法參與小組報告，請事先告知老師<br>
+    可改為個人報告或書面報告<br><br>
+
+    <b>⏰ 報告時間：</b><br>
+    ✅ 下下週：A、B、C 組<br>
+    ✅ 下下下週：D、E 組
+  </div>
+  `,icon:'info',confirmButtonText:'知道了！'
+ })
  return
  Swal.fire({
    imageUrl:'https://lh3.googleusercontent.com/d/1FU9fzodE5C7UYB9NZAfyOQmyfcCjMTP2?t=1301',
