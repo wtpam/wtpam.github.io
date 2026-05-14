@@ -646,8 +646,18 @@ onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
  //repeat()
+Swal.fire({
+   imageUrl:'https://lh3.googleusercontent.com/d/1f9K5zAsFKp1y4_h8rQdxKPBQzH6zelad?t=20260514',
+   imageAlt:'鐵馬班遊',
+   //showConfirmButton:false,
+   showDenyButton:true,
+   confirmButtonText:'🔎查看回程公車站【往台灣大道】🚏',
+   denyButtonText:'🔎查看回程公車站【往文山】🚏',
+   width:'800px'
+  }).then(result=>{if(result.isConfirmed)open('https://maps.app.goo.gl/91ARwLGPQSh1o43Y6','_blank');else if(result.isDenied)open('https://maps.app.goo.gl/91ARwLGPQSh1o43Y6','_blank')})
+ return
  Swal.fire({
-  imageUrl:'https://lh3.googleusercontent.com/d/1f9K5zAsFKp1y4_h8rQdxKPBQzH6zelad?t=20260513',
+  imageUrl:'https://lh3.googleusercontent.com/d/1f9K5zAsFKp1y4_h8rQdxKPBQzH6zelad?t=20260514',
   imageAlt:'鐵馬班遊',
   showConfirmButton:false,
   width:'800px'
