@@ -169,10 +169,18 @@ b{color:red}
 <a href="https://drive.google.com/file/d/1FN3Sub2HCy47pSKHqekDl4HBDp-suyxA/edit" target="_blank">
  <button style="background-color:lime;width:6em;font-size:300%;height:3em">🎯選社步驟<br>🖼️簡報</button>
 </a>
+-->
 <br><br>
 <a>
- <button class="flash2" style="color:yellow;background-color:#008de7" onclick='document.getElementById("homework").scrollIntoView({behavior:"smooth",block:"start"})'>📢寒假作業說明📝</button>
+ <button class="flash2" style="color:yellow;background-color:#008de7" onclick='document.getElementById("homework").scrollIntoView({behavior:"smooth",block:"start"})'>📢暑假作業說明📝</button>
 </a>
+<!--
+<br><br>
+<a href="https://drive.google.com/drive/folders/1uzWtRtCPm6ppBir0WPbGIcehidmiY3EHtbLeOZCPiZDo8KGJLGN0AJf5lzyUOcLpjJSo2Glr" target="_blank">
+ <button class="flash2" style="color:yellow;background-color:#008de7">📌暑假作業上傳📤</button>
+</a>-->
+
+<!--
 <br><br>
 <a href="https://drive.google.com/drive/folders/1uzWtRtCPm6ppBir0WPbGIcehidmiY3EHtbLeOZCPiZDo8KGJLGN0AJf5lzyUOcLpjJSo2Glr" target="_blank">
  <button class="flash2" style="color:yellow;background-color:#008de7">📌寒假作業上傳📤</button>
@@ -401,12 +409,11 @@ b{color:red}
 <br>
 <img id="schedule" src="https://lh3.googleusercontent.com/d/1qUvFxuojr9MyaZVb3QCkjVw4k7hCF2XG" style="display:block;margin:auto;width:95%;max-width:800px">
 <!--<iframe id="schedule" src="https://drive.google.com/file/d/1RP6D6MybWt3bNe80MKRpq29RTWtLlghH/preview" width="95%" style="border:none;max-width:800px;height:100vh"></iframe>-->
-<!--
 <br>
-<img id="homework" src="https://lh3.googleusercontent.com/d/1pQubWoUjDvE88mI3lUT6gqzcMNzQ6PSu" style="display:block;margin:auto;width:95%;max-width:800px">
-<img src="https://lh3.googleusercontent.com/d/1xdpls_qLjvgAXqLU1V2Z9B095CSGVR_M" style="display:block;margin:auto;width:95%;max-width:800px">
-<img src="https://lh3.googleusercontent.com/d/1DdLXJpmykrykQ-xB3692wqBHAxygJE0J" style="display:block;margin:auto;width:95%;max-width:800px">
--->
+<img id="homework" src="https://lh3.googleusercontent.com/d/1u4JVsI0_mTaqEZ60EEO2vmfiZK6rg2sK" style="display:block;margin:auto;width:95%;max-width:800px">
+<img src="https://lh3.googleusercontent.com/d/1s2WInOgmSohzxDAnv3ZOAgvY_fz_vRv_" style="display:block;margin:auto;width:95%;max-width:800px">
+<img src="https://lh3.googleusercontent.com/d/1MwwZ_c3LlfvXRjH0sS2h9ou4szs5p8VS" style="display:block;margin:auto;width:95%;max-width:800px">
+<img src="https://lh3.googleusercontent.com/d/1v4wQFWJNG5NM1uO2RNRNPyVElMSJ1cqJ" style="display:block;margin:auto;width:95%;max-width:800px">
 <br>
 <a href="https://stcard.tc.edu.tw" target="_blank">
  <button style="background-color:teal">💳數位學生證❓</button>
@@ -645,14 +652,14 @@ const cloud=()=>{
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+ //repeat()
+ return
 Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1B2UuceJW8zQ8_iRfmCGirTd7IjfoSbbs?t=20260613',
   imageAlt:'段考注意事項',
   showConfirmButton:false,
   width:'800px'
  })
- //repeat()
- return
 Swal.fire({
    imageUrl:'https://lh3.googleusercontent.com/d/1f9K5zAsFKp1y4_h8rQdxKPBQzH6zelad?t=20260514',
    imageAlt:'鐵馬班遊',
