@@ -12,6 +12,13 @@ body{
  text-align:center;
 }
 
+img{
+ display:block;
+ margin:auto;
+ width:95%;
+ max-width:800px
+}
+
 #back-left,#back-right{
  position:fixed;
  bottom:20px;
@@ -210,7 +217,7 @@ b{color:red}
 </select>
 <br><br>
 <a>
- <button class="white1" onclick='document.getElementById("schedule").scrollIntoView({behavior:"smooth",block:"start"})'>第二學期行事曆</button>
+ <button class="white1" onclick='document.getElementById("schedule").scrollIntoView({behavior:"smooth",block:"start"})'>第一學期行事曆</button>
  <!--<button class="white1" onclick='window.open("https://drive.google.com/file/d/1OaLjXYwQ9oBiE13Rdm6W4iz9vSNd_Yki/edit","_blank")'>第二學期行事曆</button>-->
 </a>
 <br><br>
@@ -392,19 +399,25 @@ b{color:red}
  <button class="white"></button>
 </a>
 <section>
-<img id="memo" style="display:block;margin:auto;width:95%;max-width:800px">
+<img id="memo">
 <br>
-<img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920?t=20260626" style="display:block;margin:auto;width:95%;max-width:800px">
+<img id="money" src="https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920?t=20260626">
 <!--https://lh3.googleusercontent.com/d/1HS6YCenXeesJW9KoULdoEjotlwMCIKRU=w1920-->
 <iframe width="95%" height="50%" style="max-width:800px" src="https://www.youtube.com/embed/BfQAxKIwhz8" title="英文歌唱比賽" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
 <br>
-<img id="schedule" src="https://lh3.googleusercontent.com/d/1qUvFxuojr9MyaZVb3QCkjVw4k7hCF2XG" style="display:block;margin:auto;width:95%;max-width:800px">
+<img id="schedule" src="https://lh3.googleusercontent.com/d/183sELdJJlLR3yxGpDoylVD0PmfCrbGLp">
+<img src="https://lh3.googleusercontent.com/d/1_AwSEwxe5DW5LrzBNBoPB7YYuAcbyvw3">
+<img src="https://lh3.googleusercontent.com/d/1OS1TufXo4mn4Ggi_9zfUvrxgMTm2iV_Z">
+<img src="https://lh3.googleusercontent.com/d/1FEJNUaTbzY7p2LyElWFOevDWPQ-X6zX-">
+<img src="https://lh3.googleusercontent.com/d/14Y3sopDI1nyMPouHLZnRB1Osy_HSenvq">
+<img src="https://lh3.googleusercontent.com/d/1BVO41zR8NPxzJ72IIW3H5PYBQTfwE4PK">
+<img src="https://lh3.googleusercontent.com/d/1OsJuP26tbxq83CsNawLBCVI7JQC4oshk">
 <!--<iframe id="schedule" src="https://drive.google.com/file/d/1RP6D6MybWt3bNe80MKRpq29RTWtLlghH/preview" width="95%" style="border:none;max-width:800px;height:100vh"></iframe>-->
-<br>
-<img id="homework" src="https://lh3.googleusercontent.com/d/1u4JVsI0_mTaqEZ60EEO2vmfiZK6rg2sK" style="display:block;margin:auto;width:95%;max-width:800px">
-<img src="https://lh3.googleusercontent.com/d/1s2WInOgmSohzxDAnv3ZOAgvY_fz_vRv_" style="display:block;margin:auto;width:95%;max-width:800px">
-<img src="https://lh3.googleusercontent.com/d/1MwwZ_c3LlfvXRjH0sS2h9ou4szs5p8VS" style="display:block;margin:auto;width:95%;max-width:800px">
-<img src="https://lh3.googleusercontent.com/d/1v4wQFWJNG5NM1uO2RNRNPyVElMSJ1cqJ" style="display:block;margin:auto;width:95%;max-width:800px">
+<hr>
+<img id="homework" src="https://lh3.googleusercontent.com/d/1u4JVsI0_mTaqEZ60EEO2vmfiZK6rg2sK">
+<img src="https://lh3.googleusercontent.com/d/1s2WInOgmSohzxDAnv3ZOAgvY_fz_vRv_">
+<img src="https://lh3.googleusercontent.com/d/1MwwZ_c3LlfvXRjH0sS2h9ou4szs5p8VS">
+<img src="https://lh3.googleusercontent.com/d/1v4wQFWJNG5NM1uO2RNRNPyVElMSJ1cqJ">
 <br>
 <a href="https://stcard.tc.edu.tw" target="_blank">
  <button style="background-color:teal">💳數位學生證❓</button>
@@ -613,6 +626,7 @@ const cloud=()=>{
  10  葉Ｏ濬 928292
  11  趙Ｏ呈 833050
  12  羅Ｏ安 833099
+ 13  王Ｏ琳 838253
  14  方Ｏ婕 843901
  15  何Ｏ亞 838415
  16  余Ｏ恩 833088
@@ -629,6 +643,7 @@ const cloud=()=>{
  27  馮Ｏ喬 928287
  28  李Ｏ榛 256768
  29  林Ｏ樺 925669
+ 30  古Ｏ縈
    </pre>
    <p style="text-align:center;font-size:18px;line-height:1.3;margin:0;padding:0">
     <strong>　密碼：</strong>身分證字號後9個數字<br>
@@ -836,7 +851,7 @@ const fileInput=document.getElementById('fileInput')
 const button=document.querySelector('button[type="button"]')
 const select=document.querySelector('select')
 const white=document.querySelector(".white")
-;['01白岳霖','02吳弘程','03李承軒','04施珺睿','05翁宇謙','06莊淙旭','07陳立恩','08陳崴仁','09黃祥峻','10葉子濬','11趙衍呈','12羅宇安','14方語婕','15何欣亞','16余昱恩','17沈語婕','18侯瑄沂','19張宇彤','20張晴甄','21莊琬琳','22陳函郁','23陳苡晴','24葉霈晴','25劉芸圻','26魏季芃','27馮琳喬','28李英榛','29林宥樺']
+;['01白岳霖','02吳弘程','03李承軒','04施珺睿','05翁宇謙','06莊淙旭','07陳立恩','08陳崴仁','09黃祥峻','10葉子濬','11趙衍呈','12羅宇安','13王巧琳','14方語婕','15何欣亞','16余昱恩','17沈語婕','18侯瑄沂','19張宇彤','20張晴甄','21莊琬琳','22陳函郁','23陳苡晴','24葉霈晴','25劉芸圻','26魏季芃','27馮琳喬','28李英榛','29林宥樺','30古玥縈']
 .forEach(item=>{const t=document.createElement("option");t.textContent=item.replace(/(.)(.)$/,"Ｏ$2");;select.appendChild(t)})
 select.onchange=()=>{
  if(button.textContent!='✅選中檔案')button.textContent='📷上傳檔案'
