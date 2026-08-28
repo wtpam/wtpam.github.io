@@ -166,7 +166,7 @@ b{color:red}
 <br><br>
 <a>
 <!--<button style="background-color:lime" onclick='document.getElementById("club").scrollIntoView({behavior:"smooth",block:"start"})'>社團名稱＆簡介🔥</button>-->
-    <button style="background-color:lime" onclick="alert('開學9/2(三)18:00才開始選社團喔…⏳🎯');Swal.fire({imageUrl:'https://lh3.googleusercontent.com/d/1AYWYJN1IcNPu0C83fYF57Av6a7xUt5zf',showConfirmButton:false,width:'800px'})">社團名稱＆簡介🔥</button>
+    <button style="background-color:lime" onclick="alert('開學9/2(三)18:00才開始選社團喔…⏳🎯');Swal.fire({imageUrl:'https://lh3.googleusercontent.com/d/1AYWYJN1IcNPu0C83fYF57Av6a7xUt5zf',showConfirmButton:false,width:'800px'})">社團選填說明<!--社團名稱＆簡介🔥--></button>
 </a>
 <br><br>
 <a>
@@ -665,23 +665,29 @@ const cloud=()=>{
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+ Swal.fire({
+  imageUrl:'https://lh3.googleusercontent.com/d/1iVfXNJgo1u4occrJn5N-J8ddQphBk9uW',
+  imageAlt:'社團名稱＆簡介',
+  showConfirmButton:false,
+  width:'800px'
+ })
  //repeat()
  return
-Swal.fire({
+ Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1B2UuceJW8zQ8_iRfmCGirTd7IjfoSbbs?t=20260613',
   imageAlt:'段考注意事項',
   showConfirmButton:false,
   width:'800px'
  })
-Swal.fire({
-   imageUrl:'https://lh3.googleusercontent.com/d/1f9K5zAsFKp1y4_h8rQdxKPBQzH6zelad?t=20260514',
-   imageAlt:'鐵馬班遊',
-   //showConfirmButton:false,
-   showDenyButton:true,
-   confirmButtonText:'🔎查看回程公車站【往台灣大道】🚏',
-   denyButtonText:'🔎查看回程公車站【往文山】🚏',
-   width:'800px'
-  }).then(result=>{if(result.isConfirmed)open('https://maps.app.goo.gl/91ARwLGPQSh1o43Y6','_blank');else if(result.isDenied)open('https://maps.app.goo.gl/pxqQKtEkqrfcHx3A6','_blank')})
+ Swal.fire({
+  imageUrl:'https://lh3.googleusercontent.com/d/1f9K5zAsFKp1y4_h8rQdxKPBQzH6zelad?t=20260514',
+  imageAlt:'鐵馬班遊',
+  //showConfirmButton:false,
+  showDenyButton:true,
+  confirmButtonText:'🔎查看回程公車站【往台灣大道】🚏',
+  denyButtonText:'🔎查看回程公車站【往文山】🚏',
+  width:'800px'
+ }).then(result=>{if(result.isConfirmed)open('https://maps.app.goo.gl/91ARwLGPQSh1o43Y6','_blank');else if(result.isDenied)open('https://maps.app.goo.gl/pxqQKtEkqrfcHx3A6','_blank')})
  return
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1f9K5zAsFKp1y4_h8rQdxKPBQzH6zelad?t=20260514',
@@ -715,13 +721,7 @@ Swal.fire({
   `,icon:'info',confirmButtonText:'知道了！'
  })
  return
- Swal.fire({
-   imageUrl:'https://lh3.googleusercontent.com/d/1FU9fzodE5C7UYB9NZAfyOQmyfcCjMTP2?t=1301',
-   imageAlt:'隔宿露營宣導',
-   showConfirmButton:false,
-   width:'800px'
-  })
- return
+
  Swal.fire({
    imageUrl:'https://lh3.googleusercontent.com/d/1fz57OGooLuBcWMVNmB3e3ZeqhmKMXdQY',
    imageAlt:'老舊木課桌椅',
