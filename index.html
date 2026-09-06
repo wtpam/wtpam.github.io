@@ -162,11 +162,10 @@ b{color:red}
 <a href="https://drive.google.com/file/d/1WWXDqiL_kLZPiF_VJogjSzPI9S8d5feB/edit" target="_blank">
  <button style="background-color:lightSalmon;width:3em;font-size:300%;height:2em">社會</button>
 </a>
--->
 <br><br>
 <a>
-<!--<button style="background-color:lime" onclick='document.getElementById("club").scrollIntoView({behavior:"smooth",block:"start"})'>社團名稱＆簡介🔥</button>-->
-    <button style="background-color:lime" onclick="Swal.fire({imageUrl:'https://lh3.googleusercontent.com/d/1AYWYJN1IcNPu0C83fYF57Av6a7xUt5zf',showConfirmButton:false,width:'800px'})">社團選填說明🔥<!--社團名稱＆簡介🔥--></button>
+    <button style="background-color:lime" onclick='document.getElementById("club").scrollIntoView({behavior:"smooth",block:"start"})'>社團名稱＆簡介🔥</button>
+    <button style="background-color:lime" onclick="Swal.fire({imageUrl:'https://lh3.googleusercontent.com/d/1AYWYJN1IcNPu0C83fYF57Av6a7xUt5zf',showConfirmButton:false,width:'800px'})">社團選填說明🔥社團名稱＆簡介🔥</button>
 </a>
 <br><br>
 <a>
@@ -175,7 +174,7 @@ b{color:red}
 <a href="https://drive.google.com/file/d/1ywlWQ1lamyldFg-lnYxXsumuawvkD_So/edit" target="_blank">
  <button style="background-color:lime;width:6em;font-size:300%;height:3em">🎯選社步驟<br>🖼️簡報</button>
 </a>
-
+-->
 <!--
 <a>
  <button class="flash2" style="color:yellow;background-color:#008de7" onclick='document.getElementById("homework").scrollIntoView({behavior:"smooth",block:"start"})'>📢暑假作業說明📝</button>
@@ -666,6 +665,7 @@ const cloud=()=>{
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+ return
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1iVfXNJgo1u4occrJn5N-J8ddQphBk9uW=w1920',
   imageAlt:'社團名稱＆簡介',
@@ -673,7 +673,6 @@ onload=()=>{
   width:'800px'
  })
  //repeat()
- return
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1B2UuceJW8zQ8_iRfmCGirTd7IjfoSbbs?t=20260613',
   imageAlt:'段考注意事項',
