@@ -127,7 +127,7 @@ b{color:red}
 <a>
  <button id="installBtn" style="display:none;background-color:yellow;width:12em;font-size:300%;height:2em">安裝❤️幸福十班🌈APP</button>
 </a>
-
+<!--
 <h1 class="flash2" style="color:yellow">📝去年段一試題💯</h1>
 <a href="https://drive.google.com/file/d/1KchRZlgFqnSCyj5GjVJ8H7Bq09X8yhcf/edit" target="_blank">
  <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em">國<br>文</button>
@@ -147,7 +147,7 @@ b{color:red}
 <a href="https://drive.google.com/file/d/1GZS5TXdbxu_RDfLaQi0m4U54Y1krrRUT/edit" target="_blank">
  <button class="flash1" style="background-color:lightSalmon;width:2em;font-size:300%;height:3em">社<br>會</button>
 </a>
-
+-->
 <!--
 <h1 style="color:white">📘補行評量題庫✏️</h1>
 <a href="https://drive.google.com/file/d/1ErR0b6C2IUjFDECeglmZ8WcrDZ2LX6DA/edit" target="_blank">
@@ -669,6 +669,7 @@ const cloud=()=>{
 onload=()=>{
  const th=document.querySelectorAll('th')
  for(let i=2;i<7;i++)th[i].innerHTML=weekdays[i-2]+th[i].innerHTML
+ return
  Swal.fire({
   imageUrl:'https://lh3.googleusercontent.com/d/1RZN-Plc35L3voM8BRGB-4NXf4REtPTkD',
   imageAlt:'段考注意事項',
